@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom'
 const navbar = (props) =>{
     return(
         <>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="dark" expand="lg" variant="dark" >
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
+                        <Nav className="ml-auto">
                         <Link to="/home" className="nav-link">Home</Link>
                         <Nav.Link href="#link">Property</Nav.Link>
                         <NavDropdown title="Property" id="basic-nav-dropdown">
