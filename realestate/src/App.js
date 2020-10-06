@@ -1,11 +1,17 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from './components/NavBar'
+import PropertyListing from './components/Home/PropertyListing';
 
 function App() {
   return (
     <div className="App">
-     <Navbar/>
+   
+    <Router>
+    <Navbar/>
+    <Route path="/home" exact component={PropertyListing}/>
+    </Router>
     </div>
   );
 }
