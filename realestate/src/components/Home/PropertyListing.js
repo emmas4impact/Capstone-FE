@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Jumbotron, Card, Button }from 'react-bootstrap'
+import { Jumbotron, Card, Button , Container, Row, Col}from 'react-bootstrap'
 import { connect } from "react-redux";
 
 const URL="http://localhost:5001"
@@ -22,7 +22,7 @@ const getListingWithThunk = (listings) => {
         console.log("A thunk was used to dispatch this action", getState());
         dispatch({
             type: "GET_PROPERTY",
-            payload: listings,
+            payload: listings.data,
         });
         console.log("hello", listings)
     
@@ -121,10 +121,30 @@ class PropertyListing extends Component {
                <h1>Properties</h1>  
                <div style={{ display: "flex"}} onClick={this.handleShow}><Button>Add Property</Button></div>   
             </Jumbotron>
-         
-
-           
-                
+            <Container>
+            <Row>
+             
+            {this.props.data.properties.map((property, i)=>(
+               
+               <Col md={4} className="mb-3" key={i}>
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={property.image}/>
+                        <Card.Body>
+                            <Card.Title>{property.title}</Card.Title>
+                            <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                            </Card.Text>
+                            <Button variant="primary">Go To property</Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+               
+            ))}
+            
+            </Row>
+       
+            </Container>  
 
           
            </>
