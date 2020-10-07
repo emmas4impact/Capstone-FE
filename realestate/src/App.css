@@ -23,7 +23,9 @@ body {
   text-align: center;
  
 }
-
+.inp:focus {
+  outline: none;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

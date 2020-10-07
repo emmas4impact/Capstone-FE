@@ -7,6 +7,7 @@ import Choose from './components/Choose'
 import Testimony from './components/Testimony';
 import Partners from './components/Partners';
 import Registration from './components/Registration';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Testimony />
       <Partners />
       <Registration />
+      <Footer />
      </>
   )
 }

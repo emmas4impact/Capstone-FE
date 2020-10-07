@@ -5,7 +5,7 @@ const Registration = () => {
     return (
         <div style={{background: 'rgb(200, 35, 50, 0.8)', color: '#fff'}}>
             <Container>
-                <Row style={{justifyContent: 'space-between', padding: '80px 50px 40px'}}>
+                <Row style={{justifyContent: 'space-between', padding: '80px 50px 30px'}}>
                     <Col lg={6} md={6} sm={12} className='mb-5'>
                         <h3>Become a Real Estate Agent</h3>
                         <h6>We only work with the best companies around the globe</h6>
