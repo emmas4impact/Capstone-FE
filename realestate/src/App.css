@@ -1,10 +1,45 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.back {
+  background: url('./img/back.jpeg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+.nav-item:hover .dropdown-menu{
+  display: block!important
+}
+#basic-nav-dropdown {
+  color: #000 ;
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  text-align: center;
+ 
+}
+.slick-slide img {
+ margin: 0 auto 30px;
+ border: 10px solid rgba(255, 255, 255, 0.1);
+ height: 114px;
+ width: 114px;
+border-radius: 50%;
+object-fit: cover;
+}
+.list-unstyled a {
+  color : #6C7A93;
+}
+.list-unstyled a:hover {
+  color : #6C7A93;
+  text-decoration: none;
+}
+.inp:focus {
+  outline: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
