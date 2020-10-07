@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import Filter from './components/Filter'
 import Choose from './components/Choose'
@@ -14,7 +14,7 @@ function App() {
       <Choose />
       <Testimony />
      </>
-  );
+  )
 }
 
 export default App;

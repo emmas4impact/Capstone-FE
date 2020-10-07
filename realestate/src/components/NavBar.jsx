@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import logo from '../img/rent.png'
 import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
@@ -47,8 +48,7 @@ import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'r
   </Navbar.Collapse>
   </Container>
 </Navbar>
-        </>
-    )
+</>
+)
 }
-
 export default NavBar
