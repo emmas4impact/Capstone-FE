@@ -10,6 +10,7 @@ function App() {
    
     <Router>
     <Navbar/>
+    <PropertyListing/>
     <Route path="/home" exact component={PropertyListing}/>
     </Router>
     </div>
