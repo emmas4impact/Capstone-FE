@@ -10,13 +10,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.2",
-<<<<<<< HEAD
-    "dotenv": "^8.2.0",
-    "node-sass": "^4.14.1",
-=======
-   
     "mapbox-gl": "^1.12.0",
->>>>>>> 54ddba89881fc4b7ab75074a8c0f68700dc35b84
     "passport": "^0.4.1",
     "react": "^16.13.1",
     "react-awesome-slider": "^4.1.0",
@@ -27,14 +21,9 @@
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-<<<<<<< HEAD
-    "spectre.css": "^0.5.9",
-    "styled-components": "^5.2.0"
-=======
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "spectre.css": "^0.5.9"
->>>>>>> 54ddba89881fc4b7ab75074a8c0f68700dc35b84
   },
   "scripts": {
     "start": "react-scripts start",
