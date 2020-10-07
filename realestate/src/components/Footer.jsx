@@ -18,11 +18,11 @@ const Footer = () => {
                     <Col lg={2} md={4} sm={12}>
                     <h5 style={{color: '#fff', marginBottom: '20px'}}>Quick Links</h5>
                     <ul style={{color:'#6C7A93'}} className='list-unstyled'>
-                        <li><a>About Us</a></li>
-                        <li><a>Terms & Conditions</a></li>
-                        <li><a>User's Guide</a></li>
-                        <li><a>Support Center</a></li>
-                        <li><a>Press Info</a></li>
+                        <li><a href='#'>About Us</a></li>
+                        <li><a href='#'>Terms & Conditions</a></li>
+                        <li><a href='#'>User's Guide</a></li>
+                        <li><a href='#'>Support Center</a></li>
+                        <li><a href='#'>Press Info</a></li>
                     </ul>
                     </Col>
                     <Col lg={2} md={4} sm={12}>

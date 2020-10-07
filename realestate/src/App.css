@@ -23,6 +23,21 @@ body {
   text-align: center;
  
 }
+.slick-slide img {
+ margin: 0 auto 30px;
+ border: 10px solid rgba(255, 255, 255, 0.1);
+ height: 114px;
+ width: 114px;
+border-radius: 50%;
+object-fit: cover;
+}
+.list-unstyled a {
+  color : #6C7A93;
+}
+.list-unstyled a:hover {
+  color : #6C7A93;
+  text-decoration: none;
+}
 .inp:focus {
   outline: none;
 }
