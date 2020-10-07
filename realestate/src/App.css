@@ -1,11 +1,29 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.back {
+  background: url('./img/back.jpeg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+.nav-item:hover .dropdown-menu{
+  display: block!important
+}
+#basic-nav-dropdown {
+  color: #000 ;
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
   text-align: center;
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
