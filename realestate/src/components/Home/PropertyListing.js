@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Jumbotron, Card, Button , Container, Row, Col}from 'react-bootstrap'
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+//import StarRatingComponent from 'react-star-rating-component';
 
 const URL="http://localhost:5001"
 console.log(URL)
@@ -10,13 +12,12 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 getListingThunk: (listings) => dispatch(getListingWithThunk(listings)),
-//getProjectThunk :(projects) => dispatch(getProjectWithThunk(projects))
+
 });
 const getListingWithThunk = (listings) => {
     
     return async(dispatch, getState) => {
         const data= await fetch(`${URL}/listings`)
-        //listings = await data.json()
         listings  = await data.json()
        
         console.log("A thunk was used to dispatch this action", getState());
@@ -135,7 +136,9 @@ class PropertyListing extends Component {
                             Some quick example text to build on the card title and make up the bulk of
                             the card's content.
                             </Card.Text>
-                            <Button variant="primary">Go To property</Button>
+                            <Button variant="primary"
+                            as={Link} to={"/properties/"+ property._id}
+                          >Go To property</Button>
                         </Card.Body>
                     </Card>
                 </Col>

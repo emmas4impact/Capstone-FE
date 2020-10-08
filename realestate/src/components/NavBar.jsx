@@ -1,7 +1,7 @@
 
 import React, { Component, useState } from 'react'
 import logo from '../img/rent.png'
-import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button, Modal} from 'react-bootstrap'
+import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button, Modal, } from 'react-bootstrap'
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faArrowRight } from '@fortawesome/free-solid-svg-icons'
@@ -21,7 +21,7 @@ import { faFacebookF, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-i
         <>
         <Navbar expand="lg">
             <Container >
-  <Navbar.Brand href="#home"><img src={logo} style={{width: '50px'}}/></Navbar.Brand>
+  <Navbar.Brand ><img src={logo} style={{width: '50px'}}/></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
@@ -32,7 +32,7 @@ import { faFacebookF, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-i
         
       </NavDropdown>
       <NavDropdown title="Property" id="basic-nav-dropdown" className='mr-4'>
-        <NavDropdown.Item href="#action/3.1">Property</NavDropdown.Item>
+        <NavDropdown.Item >Property</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Property available</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Property by city</NavDropdown.Item>
        
@@ -105,6 +105,9 @@ import { faFacebookF, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-i
                        <FontAwesomeIcon className='mr-2' icon={faTwitter} style={{color: '#fff', background: 'blue',  borderRadius: '50%', width: '40px', height: '40px', padding: '10px'}}/>
                        <FontAwesomeIcon className='mr-2'icon={faGoogle} style={{color: '#fff', background: 'red', borderRadius: '50%', width: '40px', height: '40px', padding: '10px'}}/>
         </div>
+        <p>
+        SIGN UP
+        </p>
         </div>
         </Modal.Body>
         
