@@ -41,6 +41,22 @@ object-fit: cover;
 .inp:focus {
   outline: none;
 }
+.lineAfter::after {
+  content: '/';
+  margin-left: 10px;   
+}
+
+.borderNone {
+  border : none !important;
+  border-bottom: 1px solid #ADADAD !important;
+  border-radius: 1px !important;
+}
+.formStyle {
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
