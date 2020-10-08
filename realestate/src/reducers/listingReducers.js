@@ -6,6 +6,11 @@ export default function (state = {}, action) {
                 ...state,
                 properties: action.payload
             };
+    case "GET_PROPERTY_BY_ID":
+        return {
+            ...state,
+            property: action.payload
+        };
       case "GET_USER":
         return {
             ...state,

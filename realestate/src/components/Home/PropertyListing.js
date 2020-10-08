@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Jumbotron, Card, Button , Container, Row, Col}from 'react-bootstrap'
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 //import StarRatingComponent from 'react-star-rating-component';
 
 const URL="http://localhost:5001"
@@ -155,4 +155,4 @@ class PropertyListing extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PropertyListing);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PropertyListing));
