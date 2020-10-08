@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import {Container, Row, Col} from 'react-bootstrap'
+import React from 'react'
+import {Container} from 'react-bootstrap'
 import pic1 from '../img/pic-1.jpg'
 import pic2 from '../img/pic-2.jpg'
 import pic3 from '../img/pic-3.jpg'
@@ -29,19 +29,19 @@ class Testimony extends React.Component {
                 
         <Slider {...settings}>
           <div>
-            <img src={pic1}/>
+            <img src={pic1} alt="pic1"/>
             <h6>Agusta Silva</h6>
             <small>Sales Manager</small>
             <p className='pt-3'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </div>
           <div>
-            <img src={pic2} />
+            <img src={pic2} alt="pic1"/>
             <h6>Leila Mortin</h6>
             <small>CEO</small>
             <p className='pt-3'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </div>
           <div>
-            <img src={pic3} />
+            <img src={pic3} alt="pic1"/>
             <h6>Diana Alutska</h6>
             <small>Product Manager</small>
             <p className='pt-3'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
