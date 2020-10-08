@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import { Jumbotron, Card, Button , Container, Row, Col,Image, Badge}from 'react-bootstrap'
+import {  Card,  Container, Row, Col,Image, Badge}from 'react-bootstrap'
 import { connect } from "react-redux";
+import StarRatingComponent from 'react-star-rating-component';
 
-//import StarRatingComponent from 'react-star-rating-component';
+const BASE_URL = process.env.REACT_APP_URL
+console.log(BASE_URL)
 
-const URL="http://localhost:5001"
-
-console.log(URL)
 const urlSplit = window.location.href.split('/')
 console.log(urlSplit)
 const mapStateToProps = (state) => state;
@@ -21,7 +20,7 @@ const getListingWithThunk = (listings) => {
    
     
     return async(dispatch, getState) => {
-        const data= await fetch(`${URL}/listings/${urlSplit[4]}`)
+        const data= await fetch(`${BASE_URL}/listings/${urlSplit[4]}`)
         listings  = await data.json()
        
         console.log("A thunk was used to dispatch this action", getState());
@@ -29,16 +28,13 @@ const getListingWithThunk = (listings) => {
             type: "GET_PROPERTY_BY_ID",
             payload: listings,
         });
-        console.log("hello", listings)
+        console.log("Property By ID", listings)
     
     };
   };
 
 
 class PropertyListing extends Component {
-    
-    
-    
     componentDidMount = async (id) =>{
         this.props.getListingThunk(id)
        
@@ -54,20 +50,25 @@ class PropertyListing extends Component {
             <Row>
                 <Col>
                     <Row className="mt-4 mb-2">
-                        <Col md={3}>
+                        <Col md={4}>
                             <Image src={this.props.data.property.image} className="img-fluid" alt="house" />
                         </Col>
-                        <Col md={9}>
+                        <Col md={8}>
                             <Card>
                                 <Card.Body>
-                                    <Card.Title>{this.props.data.property.title}</Card.Title>
-                                    <Card.Subtitle><Badge variant="danger">{this.props.data.property.category}</Badge></Card.Subtitle>
-                                    <Card.Text>{this.props.data.property.description}</Card.Text>
-                                    <Card.Text>{this.props.data.property.price}</Card.Text>
-                                    <Card.Text>{this.props.data.property.district}</Card.Text>
-                                    
+                                    <Card.Title><strong>Property: </strong>{this.props.data.property.title}</Card.Title>
+                                    <Card.Subtitle><strong>Type:</strong><Badge variant="danger"> {this.props.data.property.category}</Badge></Card.Subtitle>
+                                    <Card.Text><strong>Description:</strong> {this.props.data.property.description}</Card.Text>
+                                    <Card.Text><strong>Price: </strong>{this.props.data.property.price}</Card.Text>
+                                    <Card.Text><strong>District: </strong>{this.props.data.property.district}</Card.Text>
+                                    <Card.Text><strong>Rating: </strong><StarRatingComponent 
+                                    name="rating"
+                                    starCount={5}
+                                    value={this.props.data.property.rating}
+                                    />
+                                    </Card.Text>
                                     {/* <Card.Text >{this.props.data.property.details[0]}</Card.Text> */}
-                                
+                                    
                                     
                                 </Card.Body>
                             </Card>
