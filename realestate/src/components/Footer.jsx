@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Container, Row, Col} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram, faGoogle, faReddit, faPinterest } from "@fortawesome/free-brands-svg-icons";
-
+import {Link} from 'react-router-dom'
 const Footer = () => {
     return (
         <div style={{background: '#1D293F'}}>
@@ -17,11 +17,11 @@ const Footer = () => {
                     <Col lg={2} md={4} sm={12}>
                     <h5 style={{color: '#fff', marginBottom: '20px'}}>Quick Links</h5>
                     <ul style={{color:'#6C7A93'}} className='list-unstyled'>
-                        <li><a href='#'>About Us</a></li>
-                        <li><a href='#'>Terms & Conditions</a></li>
-                        <li><a href='#'>User's Guide</a></li>
-                        <li><a href='#'>Support Center</a></li>
-                        <li><a href='#'>Press Info</a></li>
+                        <li><a as={Link} to='/'>About Us</a></li>
+                        <li><a as={Link} to='/'>Terms & Conditions</a></li>
+                        <li><a as={Link} to='/'>User's Guide</a></li>
+                        <li><a as={Link} to='/'>Support Center</a></li>
+                        <li><a as={Link} to='/'>Press Info</a></li>
                     </ul>
                     </Col>
                     <Col lg={2} md={4} sm={12}>
