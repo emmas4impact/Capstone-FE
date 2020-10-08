@@ -14,9 +14,18 @@ const initialState = {
     
     data:{
         properties: [],
+        tenants: [],
+        users:[],
         Total: 0,
         limit: 5,
+        Perpage:8,
         show: false,
+        numPerPage: 3,
+        currentPageNum: 1,
+        sortingKeys: [],
+        selectedKey: '...',
+        orderKey: 'desc',
+        orderKeysArray: ['asc', 'desc'],
         listing:{
             title: "",
             location: [],
