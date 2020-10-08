@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Container, Col, Row} from 'react-bootstrap'
 import img1 from '../img/1.png'
 import img2 from '../img/2.png'
@@ -15,19 +15,19 @@ const Partners = () => {
                 <h6 style={{letterSpacing: '3px'}}>We only work with the best companies around the globe</h6>
             <Row style={{justifyContent: 'center'}} className='pt-5 pb-5'>  
              <Col  lg={2} md={2}  sm={6} style={{margin: '10px', padding: '30px'}}>
-                <img src={img1}/>
+                <img src={img1} alt="img1"/>
             </Col>  
             <Col  lg={2} md={2}  sm={6} style={{margin: '10px', padding: '30px'}}>
-                <img src={img2}/>
+                <img src={img2} alt="img2"/>
             </Col>  
             <Col  lg={2} md={2}  sm={6} style={{margin: '10px', padding: '30px'}}>
-                <img src={img3}/>
+                <img src={img3} alt="img3"/>
             </Col>  
             <Col  lg={2} md={2}  sm={6} style={{margin: '10px', padding: '30px'}}>
-                <img src={img4}/>
+                <img src={img4} alt="img4"/>
             </Col>  
             <Col className='pl-3' lg={2} md={2}  sm={6} style={{margin: '10px', padding: '30px'}}>
-                <img src={img5}/>
+                <img src={img5} alt="img5"/>
             </Col>   
             </Row>
             </Container>
