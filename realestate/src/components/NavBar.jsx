@@ -2,12 +2,13 @@
 import React, { Component } from 'react'
 import logo from '../img/rent.png'
 import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
  const NavBar = () => {
     return (
         <>
         <Navbar expand="lg">
             <Container >
-  <Navbar.Brand href="#home"><img src={logo} style={{width: '50px'}}/></Navbar.Brand>
+  <Navbar.Brand as={Link} to="/"><img src={logo} style={{width: '50px'}}/></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
@@ -18,7 +19,7 @@ import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'r
         
       </NavDropdown>
       <NavDropdown title="Property" id="basic-nav-dropdown" className='mr-4'>
-        <NavDropdown.Item href="#action/3.1">Property</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/properties">Property</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Property available</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Property by city</NavDropdown.Item>
        
