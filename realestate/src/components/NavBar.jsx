@@ -1,15 +1,11 @@
 
-import React, { Component, useState } from 'react'
+import React, {  useState } from 'react'
 import logo from '../img/rent.png'
-import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button, Modal, } from 'react-bootstrap'
-import ReactDOM from 'react-dom'
+import { Container, Navbar, Nav, NavDropdown, Form, Button, Modal, } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-icons";
-
-import {
-  Link
-} from "react-router-dom"
+import {Link} from 'react-router-dom'
 
  const NavBar = () => {
   const [show, setShow] = useState(false);
@@ -26,51 +22,50 @@ import {
         <>
         <Navbar expand="lg">
             <Container >
-  <Navbar.Brand ><img src={logo} style={{width: '50px'}}/></Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="ml-auto">
-    <NavDropdown title="Home" id="basic-nav-dropdown" className='mr-4'>
-        <NavDropdown.Item href="#action/3.1">Home 01</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Home 02</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Home 03</NavDropdown.Item>
+          <Navbar.Brand ><img src={logo} style={{width: '50px'}} alt="logo"/></Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ml-auto">
+            <NavDropdown title="Home" id="basic-nav-dropdown" className='mr-4'>
+                <NavDropdown.Item href="#action/3.1">Home 01</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Home 02</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Home 03</NavDropdown.Item>
+                
+              </NavDropdown>
+              <NavDropdown title="Property" id="basic-nav-dropdown" className='mr-4'>
+                <NavDropdown.Item as={Link} to="/properties">Property</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">Property available</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">Property by city</NavDropdown.Item>
+              
+              </NavDropdown>
+              <NavDropdown title="Pages" id="basic-nav-dropdown" className='mr-4'>
+                <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
+                <NavDropdown.Item href="">Advisor</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Search List</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Search Grid</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">FAQ</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Pricing</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">User list</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Registration</NavDropdown.Item>
+                
+              </NavDropdown>
+              <NavDropdown title="News" id="basic-nav-dropdown" className='mr-4'>
+                <NavDropdown.Item href="#action/3.1">News</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">News details</NavDropdown.Item>
+                
+              </NavDropdown>
+              <Nav.Link style={{color: '#000'}} href="#contact" className='mr-4'>Contact us</Nav.Link>
+              <Nav.Link style={{color: '#000'}} href="#contact" className='lineAfter' onClick={handleShow}>
+              <FontAwesomeIcon icon={faUser} className='mr-2'/>
+                Sign in</Nav.Link>
+          
+              <Nav.Link style={{color: '#000'}} href="#contact" onClick={handleShow1}>Sign up</Nav.Link>
         
-      </NavDropdown>
-      <NavDropdown title="Property" id="basic-nav-dropdown" className='mr-4'>
-        <NavDropdown.Item >Property</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Property available</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Property by city</NavDropdown.Item>
-       
-      </NavDropdown>
-      <NavDropdown title="Pages" id="basic-nav-dropdown" className='mr-4'>
-        <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Advisor</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Search List</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.1">Search Grid</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">FAQ</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Pricing</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">User list</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Registration</NavDropdown.Item>
         
-      </NavDropdown>
-      <NavDropdown title="News" id="basic-nav-dropdown" className='mr-4'>
-        <NavDropdown.Item href="#action/3.1">News</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">News details</NavDropdown.Item>
-        
-      </NavDropdown>
-      <Nav.Link style={{color: '#000'}} href="#contact" className='mr-4'>Contact us</Nav.Link>
-      <Nav.Link style={{color: '#000'}} href="#contact" className='lineAfter' onClick={handleShow}>
-      <FontAwesomeIcon icon={faUser} className='mr-2'/>
-        Sign in</Nav.Link>
-   
-      <Nav.Link style={{color: '#000'}} href="#contact" onClick={handleShow1}>Sign up</Nav.Link>
- 
- 
-      
-     <Button variant="outline-danger" className='ml-5' onClick={handleShow2}>  <Link to='/listing' className="hoverWhite">Add listing +</Link></Button>
-       
+              
+              <Button variant="outline-danger" className='ml-5'>Add listing +</Button>
 
-     
+            
       </Nav>
   </Navbar.Collapse>
   </Container>
@@ -81,7 +76,7 @@ import {
   
         
         <Modal.Header closeButton style={{border: 'none', padding :'30px'}}>
-          <Modal.Title> <img src={logo} style={{width: '50px'}}/> <i className='ml-3'>Sign In</i></Modal.Title>
+          <Modal.Title> <img src={logo} style={{width: '50px'}} alt="logo"/> <i className='ml-3' >Sign In</i></Modal.Title>
         </Modal.Header>
         <Modal.Body style={{padding: '50px'}}>
         <Form>
@@ -121,7 +116,7 @@ import {
 
       <Modal show={show1} onHide={handleClose1} className='formStyle'>
         <Modal.Header closeButton style={{border: 'none', padding :'30px'}}>
-          <Modal.Title> <img src={logo} style={{width: '50px'}}/> <i className='ml-3'>Sign Up</i></Modal.Title>
+          <Modal.Title> <img src={logo} style={{width: '50px'}} alt="logo"/> <i className='ml-3'>Sign Up</i></Modal.Title>
         </Modal.Header>
         <Modal.Body style={{padding: '50px'}}>
         <Form>

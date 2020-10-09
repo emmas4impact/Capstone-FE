@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import { Jumbotron, Card, Button , Container, Row, Col}from 'react-bootstrap'
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 //import StarRatingComponent from 'react-star-rating-component';
 
-const URL="http://localhost:5001"
-console.log(URL)
+
+const BASE_URL = process.env.REACT_APP_URL
+
 const mapStateToProps = (state) => state;
 
 const mapDispatchToProps = (dispatch) => ({
@@ -17,7 +18,7 @@ getListingThunk: (listings) => dispatch(getListingWithThunk(listings)),
 const getListingWithThunk = (listings) => {
     
     return async(dispatch, getState) => {
-        const data= await fetch(`${URL}/listings`)
+        const data= await fetch(`${BASE_URL}/listings`)
         listings  = await data.json()
        
         console.log("A thunk was used to dispatch this action", getState());
@@ -155,4 +156,4 @@ class PropertyListing extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PropertyListing);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PropertyListing));

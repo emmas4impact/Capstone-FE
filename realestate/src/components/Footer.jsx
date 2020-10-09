@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Container, Row, Col} from 'react-bootstrap'
-import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram, faGoogle, faReddit, faPinterest } from "@fortawesome/free-brands-svg-icons";
-
+import {Link} from 'react-router-dom'
 const Footer = () => {
     return (
         <div style={{background: '#1D293F'}}>
@@ -18,11 +17,11 @@ const Footer = () => {
                     <Col lg={2} md={4} sm={12}>
                     <h5 style={{color: '#fff', marginBottom: '20px'}}>Quick Links</h5>
                     <ul style={{color:'#6C7A93'}} className='list-unstyled'>
-                        <li><a href='#'>About Us</a></li>
-                        <li><a href='#'>Terms & Conditions</a></li>
-                        <li><a href='#'>User's Guide</a></li>
-                        <li><a href='#'>Support Center</a></li>
-                        <li><a href='#'>Press Info</a></li>
+                        <li><a as={Link} to='/'>About Us</a></li>
+                        <li><a as={Link} to='/'>Terms & Conditions</a></li>
+                        <li><a as={Link} to='/'>User's Guide</a></li>
+                        <li><a as={Link} to='/'>Support Center</a></li>
+                        <li><a as={Link} to='/'>Press Info</a></li>
                     </ul>
                     </Col>
                     <Col lg={2} md={4} sm={12}>
@@ -36,30 +35,31 @@ const Footer = () => {
                     </Col>
                     <Col lg={4} md={4} sm={12}>
                     <h5 style={{color: '#fff', marginBottom: '20px'}}>Follow us</h5>
-                   <Row>
+                    <Row>
             
-                       <Col style={{ color:'#6C7A93', fontSize: '20px'}}>
-                       <FontAwesomeIcon className='mr-2' icon={faFacebook}/>
-                       <FontAwesomeIcon className='mr-2' icon={faTwitter}/>
-                       <FontAwesomeIcon className='mr-2' icon={faInstagram}/>
-                       <FontAwesomeIcon className='mr-2'icon={faGoogle}/>
-                       <FontAwesomeIcon className='mr-2' icon={faPinterest}/>
-                       <FontAwesomeIcon icon={faReddit}/>
+                        <Col style={{ color:'#6C7A93', fontSize: '20px'}}>
+                        <FontAwesomeIcon className='mr-2' icon={faFacebook}/>
+                        <FontAwesomeIcon className='mr-2' icon={faTwitter}/>
+                        <FontAwesomeIcon className='mr-2' icon={faInstagram}/>
+                        <FontAwesomeIcon className='mr-2'icon={faGoogle}/>
+                        <FontAwesomeIcon className='mr-2' icon={faPinterest}/>
+                        <FontAwesomeIcon icon={faReddit}/>
 
-                       </Col>
-                      
-                   </Row>
-                   <Row>
-                   <Col>
-                       <h5 style={{color: '#fff', marginBottom: '20px'}}>Subscribe</h5>
-                       <input className='inp mr-2' placeholder='Your email' style={{width: '70%', borderRadius: '40px', padding: '10px 30px', border: 'none', background:  '#354765'}}/>
-                       <small style={{ background:  '#354765', color:'#6C7A93', padding: '15px 20px', borderRadius: '50%', fontSize: '15px', color: '#fff'}}>></small>
+                        </Col>
+                        
+                    </Row>
+                    <Row>
+                    <Col>
+                        <h5 style={{color: '#fff', marginBottom: '20px'}}>Subscribe</h5>
+                        <input className='inp mr-2' placeholder='Your email' style={{width: '70%', borderRadius: '40px', padding: '10px 30px', border: 'none', background:  '#354765'}}/>
+                        <small style={{ background:  '#354765', color:'#6C7A93', padding: '15px 20px', borderRadius: '50%', fontSize: '15px', color: '#fff'}}></small>
                     </Col>
-                   </Row>
+                    </Row>
                     </Col>
                 </Row>
             </Container>
         </div>
     )
 }
-export default Footer
+
+export default Footer;    

@@ -14,6 +14,7 @@ const initialState = {
     
     data:{
         properties: [],
+        property: [],
         tenants: [],
         users:[],
         Total: 0,

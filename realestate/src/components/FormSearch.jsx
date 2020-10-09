@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { FormControl, Form, Container, Button, Row, Col} from 'react-bootstrap'
-import ReactDOM from 'react-dom'
+import { Form, Container, Button, Row, Col} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
