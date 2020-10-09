@@ -7,14 +7,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
+import {
+  Link
+} from "react-router-dom"
 
  const NavBar = () => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
-
+  const handleShow2 = () =>  setShow2(true)
   const handleClose = () => setShow(false);
+  const handleClose2 = () => setShow2(false);
   const handleShow = () => setShow(true);
 
     return (
@@ -62,7 +67,8 @@ import { faFacebookF, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-i
  
  
       
-      <Button variant="outline-danger" className='ml-5'>Add listing +</Button>
+     <Button variant="outline-danger" className='ml-5' onClick={handleShow2}>  <Link to='/listing' className="hoverWhite">Add listing +</Link></Button>
+       
 
      
       </Nav>

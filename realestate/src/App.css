@@ -57,6 +57,15 @@ object-fit: cover;
   font-weight: 600;
   color: #333333;
 }
+.hoverWhite {
+  color: #C82332;
+  text-decoration: none;
+}
+.hoverWhite:hover {
+  color: #fff !important;
+  text-decoration: none;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

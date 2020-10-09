@@ -26,7 +26,7 @@ const Partners = () => {
             <Col  lg={2} md={2}  sm={6} style={{margin: '10px', padding: '30px'}}>
                 <img src={img4}/>
             </Col>  
-            <Col className='pl-3' lg={2} md={2}  sm={6} style={{margin: '10px', padding: '30px'}}>
+            <Col lg={2} md={2}  sm={6} style={{margin: '10px', padding: '30px'}}>
                 <img src={img5}/>
             </Col>   
             </Row>
