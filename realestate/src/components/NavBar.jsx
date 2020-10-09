@@ -5,27 +5,62 @@ import { Container, Navbar, Nav, NavDropdown, Form, Button, Modal, } from 'react
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
- const NavBar = () => {
+import axios from 'axios'
+ const NavBar = (props) => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
-
+  const BASE_URL = process.env.REACT_APP_URL
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const getEmail = (e) => {
+    setEmail(e.target.value)
+  }
+  const getPassword = (e) => {
+    setPassword(e.target.value)
+  }
+  const login = async (e) => {
+    e.preventDefault()
+    const data = {
+      "email": email,
+      "password": password,
+    }
+    try {
+      const res = await axios.post(`${BASE_URL}/users/login`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      })
+      const response = await res
+      if (response) {
+        //props.status(true);
+        console.log(props)
+        props.history.push('/profiles');
+        handleClose()
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
     return (
         <>
         <Navbar expand="lg">
             <Container >
-          <Navbar.Brand ><img src={logo} style={{width: '50px'}} alt="logo"/></Navbar.Brand>
+          <Navbar.Brand ><img src={logo} style={{width: '50px'}} alt="logo" as={Link} to="/"/></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
             <NavDropdown title="Home" id="basic-nav-dropdown" className='mr-4'>
-                <NavDropdown.Item href="#action/3.1">Home 01</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Home 02</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Home 03</NavDropdown.Item>
                 
@@ -61,7 +96,7 @@ import {Link} from 'react-router-dom'
         
         
               
-              <Button variant="outline-danger" className='ml-5'>Add listing +</Button>
+              <Button variant="outline-danger" className='ml-5' onClick={handleShow}>Add listing +</Button>
 
             
       </Nav>
@@ -79,13 +114,21 @@ import {Link} from 'react-router-dom'
         <Modal.Body style={{padding: '50px'}}>
         <Form>
         <Form.Group controlId="formBasicEmail">
-            <Form.Label>Username</Form.Label>
-            <Form.Control className='borderNone' type="username" placeholder="Type your username" />
+            <Form.Label>email</Form.Label>
+            <Form.Control className='borderNone'
+             type="email" 
+             placeholder="Type your email" 
+             value={email}
+             onChange={getEmail}/>
           </Form.Group>
         
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" className='borderNone' placeholder="Type your password" />
+            <Form.Control type="password" 
+            className='borderNone'
+             placeholder="Type your password"
+             value={password}
+             onChange={getPassword}/>
             <Form.Text className="text-muted">
               Forgot password ? 
             </Form.Text>
@@ -93,7 +136,10 @@ import {Link} from 'react-router-dom'
        </Form>
       
 
-          <Button variant="primary" type="submit" style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '30px'}}>
+          <Button variant="primary" 
+          type="submit"
+           style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '30px'}}
+           onClick={login}>
           Sign in
           </Button>
 
@@ -160,4 +206,4 @@ import {Link} from 'react-router-dom'
 </>
 )
 }
-export default NavBar
+export default withRouter(NavBar)
