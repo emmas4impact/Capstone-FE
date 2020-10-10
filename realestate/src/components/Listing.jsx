@@ -6,7 +6,7 @@ class Listing extends Component {
 
     render() {
         return (
-            <div style={{background: 'rgb(152, 41, 32, 0.5)', paddingTop: '100px', paddingBottom: '100px'}}>
+            <div style={{background: '#E9ECF3', paddingTop: '100px', paddingBottom: '100px'}}>
                 <Container>   
                 <Form>
                 <Form.Group controlId="formBasicEmail">
