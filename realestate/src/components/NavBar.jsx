@@ -11,10 +11,13 @@ import axios from 'axios'
  const NavBar = (props) => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
   const BASE_URL = process.env.REACT_APP_URL
+  const handleShow2 = () =>  setShow2(true)
   const handleClose = () => setShow(false);
+  const handleClose2 = () => setShow2(false);
   const handleShow = () => setShow(true);
   
   const [email, setEmail] = useState('')
