@@ -6,13 +6,13 @@ import {withRouter} from 'react-router-dom'
 
  class Filter extends Component {
     render() {
-      console.log(this.props.location.pathname)
+      // console.log(this.props.location.pathname)
         return (
             <>
             <div className='back'>
             <NavBar />
 
-            {this.props.location.pathname==="/properties/" ?(<>
+            {this.props.location.pathname==="/properties" &&<>
               <Container className='welcome'>
               <h6 style={{ 'letterSpacing': '5px'}}>The Best Way To</h6>
               <h2 style={{ 'letterSpacing': '5px', marginTop: '10px'}}>Find Your Dream Home</h2>
@@ -27,7 +27,7 @@ import {withRouter} from 'react-router-dom'
             </div>
               </Container>
               <FormSearch />
-            </>) :null }
+            </>  }
               </div>
             </>
         )
