@@ -1,48 +1,53 @@
 import React, {Component} from 'react';
-import {  Card,  Container, Row, Col,Image, Badge}from 'react-bootstrap'
+import {  Card,  Container, Row, Col,Image, Badge, Button}from 'react-bootstrap'
 import { connect } from "react-redux";
 import StarRatingComponent from 'react-star-rating-component';
+import {Link, withRouter} from 'react-router-dom'
+import GoogleMapReact from 'google-map-react'
 
 const BASE_URL = process.env.REACT_APP_URL
-console.log(BASE_URL)
 
-const urlSplit = window.location.href.split('/')
-console.log(urlSplit)
+
+
 const mapStateToProps = (state) => state;
-
-const mapDispatchToProps = (dispatch) => ({
-
-
-getListingThunk: (listings) => dispatch(getListingWithThunk(listings)),
-
-});
-const getListingWithThunk = (listings) => {
-   
+const getListingWithThunk = (id) => {
+    const urlSplit = window.location.href.split('/')
+    
     
     return async(dispatch, getState) => {
-        const data= await fetch(`${BASE_URL}/listings/${urlSplit[4]}`)
-        listings  = await data.json()
+        console.log('URL SPLIT', urlSplit[4], getState());
+        const data= await fetch(`${BASE_URL}/listings/${id}`);
+        console.log('DATA FROM FETCH', data);
+        
+        // listings  = await data.json();
+        // console.log('LISTING DATA', listings);
        
-        console.log("A thunk was used to dispatch this action", getState());
+        // console.log("A thunk was used to dispatch this action", getState());
         dispatch({
             type: "GET_PROPERTY_BY_ID",
-            payload: listings,
+            payload: await data.json()
         });
-        console.log("Property By ID", listings)
     
     };
   };
 
+  const mapDispatchToProps = (dispatch) => ({
 
-class PropertyListing extends Component {
-    componentDidMount = async (id) =>{
-        this.props.getListingThunk(id)
+
+    getListingThunk: (listings) => dispatch(getListingWithThunk(listings)),
+    
+    });
+
+
+class PropertyDetails extends Component {
+    componentDidMount = async () =>{
+        this.props.getListingThunk(this.props.match.params.id)
        
     }
     
   
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <>
          
@@ -59,7 +64,7 @@ class PropertyListing extends Component {
                                     <Card.Title><strong>Property: </strong>{this.props.data.property.title}</Card.Title>
                                     <Card.Subtitle><strong>Type:</strong><Badge variant="danger"> {this.props.data.property.category}</Badge></Card.Subtitle>
                                     <Card.Text><strong>Description:</strong> {this.props.data.property.description}</Card.Text>
-                                    <Card.Text><strong>Price: </strong>{this.props.data.property.price}</Card.Text>
+                                    <Card.Text><strong>Price: </strong>N{this.props.data.property.price}</Card.Text>
                                     <Card.Text><strong>District: </strong>{this.props.data.property.district}</Card.Text>
                                     <Card.Text><strong>Rating: </strong><StarRatingComponent 
                                     name="rating"
@@ -67,12 +72,22 @@ class PropertyListing extends Component {
                                     value={this.props.data.property.rating}
                                     />
                                     </Card.Text>
-                                    {/* <Card.Text >{this.props.data.property.details[0]}</Card.Text> */}
-                                    
+                                    <Card.Text ><strong>Features: </strong>{this.props.data.property.features}</Card.Text>
+                                    <Card.Text ><strong>Details: </strong>{this.props.data.property.details}</Card.Text>
+                                    <Card.Text ><strong>Region: </strong>{this.props.data.property.region}</Card.Text>
+                                    <Button variant="primary"
+                                        as={Link} to={"/tenant/"}
+                                    >Rent Property</Button>
+                                   
                                     
                                 </Card.Body>
                             </Card>
                         </Col>
+                        {/* <GoogleMapReact
+                            bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY}}
+                            defaultCenter={location}
+                            defaultZoom={17}
+                        ></GoogleMapReact> */}
                     </Row>
                 </Col>
                     </Row>
@@ -86,4 +101,4 @@ class PropertyListing extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PropertyListing);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PropertyDetails));
