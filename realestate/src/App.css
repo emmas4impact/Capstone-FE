@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 body {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Sansita Swashed', cursive !important; */
+  font-family: 'Varela Round', sans-serif !important;
 }
 .back {
   background: url('./img/back.jpeg');
@@ -48,7 +52,7 @@ object-fit: cover;
 
 .borderNone {
   border : none !important;
-  border-bottom: 1px solid #ADADAD !important;
+  border-bottom: 1px solid #DEDEE0 !important;
   border-radius: 1px !important;
 }
 .formStyle {
@@ -61,11 +65,39 @@ object-fit: cover;
   color: #C82332;
   text-decoration: none;
 }
+.card {
+  overflow: hidden !important;
+}
 .hoverWhite:hover {
   color: #fff !important;
   text-decoration: none;
 }
-
+.card-img-top {
+  border: none;
+}
+.imgStyle { transition: all .5s ease-in-out; }
+.imgStyle:hover {
+  transform: scale(1.1);
+  overflow: hidden;
+}
+/* .card {
+  height: calc(100% - 10px);
+} */
+.footerCard {
+  
+  opacity: 0.0;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  margin-top: -70px;
+}
+.footerCard:hover{
+  
+  opacity: 1.0;
+  background-color: #fff;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

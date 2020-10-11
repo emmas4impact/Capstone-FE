@@ -25,12 +25,14 @@ class Maps extends Component{
         });
         return(
             <>
+          
+             <h5 style={{marginTop: '50px'}}>Base Floor Plan</h5>
                 <Map
                     // eslint-disable-next-line react/style-prop-object
                     style="mapbox://styles/mapbox/streets-v11"
                     containerStyle={{
                         height: '100vh',
-                        width: '100vw'
+                  
                 }}
                 >
                     <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
