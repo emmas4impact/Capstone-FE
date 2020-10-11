@@ -4,10 +4,11 @@ import { connect } from "react-redux";
 import { Link, withRouter} from 'react-router-dom';
 import Maps from '../map/Map'
 import ReactDOM from 'react-dom'
-import { faPhone, faEnvelope, faBed, faShower, faSquareRootAlt, faBorderStyle } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faEnvelope, faBed, faShower, faSquareRootAlt, faBorderStyle, faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { addressIcon } from '../img/home-address.png'
 //import StarRatingComponent from 'react-star-rating-component';
+import ScrollToTop from 'react-scroll-up'
 
 
 const BASE_URL = process.env.REACT_APP_URL
@@ -96,7 +97,11 @@ class PropertyListing extends Component {
             
             </Row>
            
-             <Maps/>               
+             <Maps/>            
+
+             <ScrollToTop showUnder={160}>
+                    <FontAwesomeIcon icon={faArrowCircleUp} style={{fontSize: '40px', color: '#D42E3E'}}/>
+                    </ScrollToTop>   
             </Container>  
 
           
