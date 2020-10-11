@@ -26,7 +26,7 @@ function App() {
         <Route path="/profiles" exact component={Profile}/>
         <Route path="/" exact component={Registration}/>
         <Route path="/listing" exact component={Listing}/>
-        <Route path="/tenant" exact component={Tenant}/>
+        <Route path="/:id/tenant" exact component={Tenant}/>
         
         <Footer />
       </Router>
