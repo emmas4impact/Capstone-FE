@@ -93,7 +93,7 @@ object-fit: cover;
   transition: all 500ms ease-in-out;
   margin-top: -70px;
 }
-.footerCard:hover{
+.cardStyle:hover .footerCard{
   
   opacity: 1.0;
   background-color: #fff;
