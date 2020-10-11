@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container'
 import {connect} from 'react-redux'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Table from 'react-bootstrap/Table'
-
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button"; 
 
 const mapStateToProps = (state) => state;
 
@@ -155,11 +155,22 @@ class Home extends Component {
                 </tbody>
                 ))}
                 </Table>
+                <ScrollUpButton />
+                {/* <ScrollUpButton
+                        StopPosition={0}
+                        ShowAtPosition={150}
+                        EasingType='easeOutCubic'
+                        AnimationDuration={500}
+                        ContainerClassName='ScrollUpButton__Container'
+                        TransitionClassName='ScrollUpButton__Toggled'
+                        style={{}}
+                        ToggledStyle={{}}
+                        /> */}
             </Container>
                   
                 
                 
-
+        
           
            </>
         )

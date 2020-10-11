@@ -25,6 +25,8 @@ class Maps extends Component{
         });
         return(
             <>
+          
+             <h5 style={{marginTop: '50px'}}>Base Floor Plan</h5>
                 <Map
                     style="mapbox://styles/mapbox/streets-v11"
                     containerStyle={{
@@ -35,7 +37,7 @@ class Maps extends Component{
                     <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
                         <Feature coordinates={[6.5244, 3.3792]} />
                     </Layer>
-                </Map>;
+                </Map>
                
                
             </>)

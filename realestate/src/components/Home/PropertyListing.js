@@ -95,7 +95,7 @@ class PropertyListing extends Component {
             ))}
             
             </Row>
-            <div> <h1>Properties Location</h1></div>
+           
              <Maps/>               
             </Container>  
 

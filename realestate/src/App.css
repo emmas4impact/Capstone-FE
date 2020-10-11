@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 body {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Sansita Swashed', cursive !important; */
+  font-family: 'Varela Round', sans-serif !important;
 }
 .back {
   background: url('./img/back.jpeg');
@@ -48,7 +52,7 @@ object-fit: cover;
 
 .borderNone {
   border : none !important;
-  border-bottom: 1px solid #ADADAD !important;
+  border-bottom: 1px solid #DEDEE0 !important;
   border-radius: 1px !important;
 }
 .formStyle {

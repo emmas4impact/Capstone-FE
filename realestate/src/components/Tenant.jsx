@@ -7,34 +7,34 @@ class Tenant extends Component {
 
     render() {
         return (
-            <div style={{background: 'light green', paddingTop: '100px', paddingBottom: '100px'}}>
+            <div>
                 <Container>   
-                    <Form>
+                    <Form style={{fontSize: '12px', border: '1px solid #DEDEE0', padding: '20px'}}>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label style={{fontSize: '20px', marginBottom: '30px', fontWeight: '500'}}>Fill in the form and we will get back to you</Form.Label>
+                            <Form.Label style={{fontSize: '15px', marginBottom: '30px', fontWeight: '500'}}>Fill in the form and we will get back to you</Form.Label>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                          <Form.Label>Name</Form.Label>
-                          <Form.Control className='borderNone' type="text" placeholder="Name" />
+                          <Form.Label style={{fontSize: '12px'}}>Name</Form.Label>
+                          <Form.Control className='borderNone' type="text" placeholder="Name" style={{fontSize: '12px'}}/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
                           <Form.Label>Surname</Form.Label>
-                          <Form.Control className='borderNone' type="text" placeholder="Surname" />
+                          <Form.Control className='borderNone' type="text" placeholder="Surname"  style={{fontSize: '12px'}}/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control className='borderNone' type="email" placeholder="Email address" />
+                        <Form.Control className='borderNone' type="email" placeholder="Email address" style={{fontSize: '12px'}}/>
                       </Form.Group>
                       <Form.Group controlId="formBasicEmail">
                           <Form.Label>Phone Nember</Form.Label>
-                          <Form.Control className='borderNone' type="tel" placeholder="Number" />
+                          <Form.Control className='borderNone' type="tel" placeholder="Number" style={{fontSize: '12px'}}/>
                         </Form.Group>
                       <Form.Group controlId="formBasicEmail">
                           <Form.Label>Property ID</Form.Label>
-                          <Form.Control className='borderNone' type="text" placeholder="Property ID" />
+                          <Form.Control className='borderNone' type="text" placeholder="Property ID" style={{fontSize: '12px'}}/>
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '50px'}}>
+                        <Button variant="primary" type="submit" style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '10px'}}>
                             Submit Now
                         </Button>
 
