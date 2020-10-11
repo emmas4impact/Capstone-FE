@@ -75,6 +75,9 @@ object-fit: cover;
 .card-img-top {
   border: none;
 }
+.cardStyle {
+  border-radius: 15px !important;
+}
 .imgStyle { transition: all .5s ease-in-out; }
 .cardStyle:hover .imgStyle{
   transform: scale(1.1);
