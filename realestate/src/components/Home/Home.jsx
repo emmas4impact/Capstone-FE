@@ -155,7 +155,7 @@ class Home extends Component {
                 </tbody>
                 ))}
                 </Table>
-                <ScrollUpButton />
+            
                 {/* <ScrollUpButton
                         StopPosition={0}
                         ShowAtPosition={150}
@@ -166,6 +166,16 @@ class Home extends Component {
                         style={{}}
                         ToggledStyle={{}}
                         /> */}
+                            <ScrollUpButton 
+                position ={fixed}
+                bottom ={50}
+                right ={30}
+                cursor ={pointer}
+                transitionDuration ={0.2}
+                transitionTimingFunction ={linear}
+                style={{color: '#fff'}}
+              
+                />
             </Container>
                   
                 

@@ -12,6 +12,7 @@ import PropertyListing from './components/Home/PropertyListing';
 import PropertyDetailsPage from './components/PropertyDetailsPage';
 import Profile from './components/Profile';
 import Tenant from './components/Tenant'
+
 function App() {
   return (
      <>
@@ -29,6 +30,7 @@ function App() {
         <Route path="/:id/tenant" exact component={Tenant}/>
         
         <Footer />
+      
       </Router>
      </>
   )

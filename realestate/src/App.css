@@ -75,8 +75,11 @@ object-fit: cover;
 .card-img-top {
   border: none;
 }
+.cardStyle {
+  border-radius: 15px !important;
+}
 .imgStyle { transition: all .5s ease-in-out; }
-.imgStyle:hover {
+.cardStyle:hover .imgStyle{
   transform: scale(1.1);
   overflow: hidden;
 }
@@ -84,7 +87,6 @@ object-fit: cover;
   height: calc(100% - 10px);
 } */
 .footerCard {
-  
   opacity: 0.0;
   -webkit-transition: all 500ms ease-in-out;
   -moz-transition: all 500ms ease-in-out;
@@ -93,7 +95,7 @@ object-fit: cover;
   transition: all 500ms ease-in-out;
   margin-top: -70px;
 }
-.footerCard:hover{
+.cardStyle:hover .footerCard{
   
   opacity: 1.0;
   background-color: #fff;

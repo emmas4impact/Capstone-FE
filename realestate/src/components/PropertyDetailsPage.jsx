@@ -5,6 +5,9 @@ import StarRatingComponent from 'react-star-rating-component';
 import {Link, withRouter} from 'react-router-dom'
 import Maps from  './map/Map'
 import Tenant from './Tenant';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ScrollToTop from 'react-scroll-up'
+import {  faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
 
 const BASE_URL = process.env.REACT_APP_URL
 
@@ -104,7 +107,9 @@ class PropertyDetails extends Component {
                 </Col>
                     </Row>
 
-       
+                    <ScrollToTop showUnder={160}>
+                    <FontAwesomeIcon icon={faArrowCircleUp} style={{fontSize: '40px', color: '#D42E3E'}}/>
+                    </ScrollToTop>   
             </Container>  
    </div>
           
