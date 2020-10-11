@@ -26,7 +26,7 @@ const getListingWithThunk = (listings) => {
             type: "GET_PROPERTY",
             payload: listings.data,
         });
-        console.log("hello", listings)
+        //console.log("hello", listings)
     
     };
   };
@@ -137,9 +137,12 @@ class PropertyListing extends Component {
                             Some quick example text to build on the card title and make up the bulk of
                             the card's content.
                             </Card.Text>
-                            <Button variant="primary"
-                            as={Link} to={"/properties/"+ property._id}
-                          >Go To property</Button>
+                            <Link className="btn btn-primary" to={`/properties/${property._id}`}>
+                            Go To property
+                            </Link>
+                            {/* <Button variant="primary"
+                            as={Link} 
+                          >Go To property</Button> */}
                         </Card.Body>
                     </Card>
                 </Col>
