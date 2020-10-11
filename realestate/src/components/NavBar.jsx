@@ -104,7 +104,7 @@ import axios from 'axios'
         
         
               
-              <Button variant="outline-danger" className='ml-5' onClick={handleShow}>Add listing +</Button>
+              <Button variant="outline-danger" className='ml-5'><Link to='/listing' className='hoverWhite'>Add listing +</Link></Button>
 
             
       </Nav>

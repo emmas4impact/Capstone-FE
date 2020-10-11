@@ -6,22 +6,22 @@ class Listing extends Component {
 
     render() {
         return (
-            <div style={{background: 'rgb(152, 41, 32, 0.5)', paddingTop: '100px', paddingBottom: '100px'}}>
-                <Container>   
+            <div style={{background: '#E9ECF3', paddingTop: '100px', paddingBottom: '100px'}}>
+                <Container style={{background: '#fff', padding: '50px'}}>   
                 <Form>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label style={{fontSize: '20px', marginBottom: '30px', fontWeight: '500'}}>Add Listing</Form.Label>
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Description</Form.Label>
+                <Form.Label style={{fontWeight: '700'}}>Description</Form.Label>
                 <Form.Control as="textarea" rows={3} />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Add Title</Form.Label>
+                <Form.Label style={{fontWeight: '700'}}>Add Title</Form.Label>
                 <Form.Control as="textarea" rows={3} />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Category</Form.Label>
+                    <Form.Label style={{fontWeight: '700'}}>Category</Form.Label>
                     <Form.Control as="select">
                     <option>Select Option</option>
                     <option>2</option>
@@ -33,7 +33,7 @@ class Listing extends Component {
 
 
                 <Form.Group as={Row}>
-      <Form.Label as="legend" column sm={2}>
+      <Form.Label as="legend" column sm={2} style={{fontWeight: '700'}}>
         Type Of Add
       </Form.Label>
       <Col sm={10}>
@@ -58,7 +58,7 @@ class Listing extends Component {
       </Col>
     </Form.Group>
     <Form.Group as={Row}>
-      <Form.Label as="legend" column sm={2}>
+      <Form.Label as="legend" column sm={2} style={{fontWeight: '700'}}>
         Who We Are
       </Form.Label>
       <Col sm={10}>
@@ -83,7 +83,7 @@ class Listing extends Component {
       </Col>
     </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Type</Form.Label>
+                    <Form.Label style={{fontWeight: '700'}}>Type</Form.Label>
                     <Form.Control as="select">
                     <option>1</option>
                     <option>2</option>
@@ -93,7 +93,7 @@ class Listing extends Component {
                     </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Status</Form.Label>
+                    <Form.Label style={{fontWeight: '700'}}>Status</Form.Label>
                     <Form.Control as="select">
                     <option>1</option>
                     <option>2</option>
@@ -103,31 +103,31 @@ class Listing extends Component {
                     </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Price</Form.Label>
+                    <Form.Label style={{fontWeight: '700'}}>Price</Form.Label>
                     <Form.Control className='borderNone' type="number"/>
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Description</Form.Label>
+                    <Form.Label style={{fontWeight: '700'}}>Description</Form.Label>
                     <Form.Control as="textarea" rows={3} placeholder='text here...' />
                 </Form.Group>
                 <Form.Group>
-                    <Form.File id="exampleFormControlFile1" label="Upload Images" />
+                    <Form.File id="exampleFormControlFile1" label="Upload Images"  style={{fontWeight: '700'}}/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicEmail">
-            <Form.Label>Name</Form.Label>
+            <Form.Label style={{fontWeight: '700'}}>Name</Form.Label>
             <Form.Control className='borderNone' type="text" placeholder="Name" />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
+          <Form.Label style={{fontWeight: '700'}}>Email</Form.Label>
           <Form.Control className='borderNone' type="email" placeholder="Email address" />
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-            <Form.Label>Phone Nember</Form.Label>
+            <Form.Label style={{fontWeight: '700'}}>Phone Nember</Form.Label>
             <Form.Control className='borderNone' type="tel" placeholder="Number" />
           </Form.Group>
         <Form.Group controlId="formBasicEmail">
-            <Form.Label>Address</Form.Label>
+            <Form.Label style={{fontWeight: '700'}}>Address</Form.Label>
             <Form.Control className='borderNone' type="text" placeholder="Address" />
           </Form.Group>
 
