@@ -3,7 +3,7 @@ import {  Card,  Container, Row, Col,Image, Badge, Button}from 'react-bootstrap'
 import { connect } from "react-redux";
 import StarRatingComponent from 'react-star-rating-component';
 import {Link, withRouter} from 'react-router-dom'
-import GoogleMapReact from 'google-map-react'
+import Maps from  './map/Map'
 
 const BASE_URL = process.env.REACT_APP_URL
 
@@ -11,18 +11,12 @@ const BASE_URL = process.env.REACT_APP_URL
 
 const mapStateToProps = (state) => state;
 const getListingWithThunk = (id) => {
-    const urlSplit = window.location.href.split('/')
-    
-    
+       
     return async(dispatch, getState) => {
-        console.log('URL SPLIT', urlSplit[4], getState());
+       
         const data= await fetch(`${BASE_URL}/listings/${id}`);
         console.log('DATA FROM FETCH', data);
-        
-        // listings  = await data.json();
-        // console.log('LISTING DATA', listings);
-       
-        // console.log("A thunk was used to dispatch this action", getState());
+    
         dispatch({
             type: "GET_PROPERTY_BY_ID",
             payload: await data.json()
@@ -47,7 +41,7 @@ class PropertyDetails extends Component {
     
   
     render(){
-        // console.log(this.props)
+        
         return(
             <>
          
@@ -78,17 +72,14 @@ class PropertyDetails extends Component {
                                     <Button variant="primary"
                                         as={Link} to={"/tenant/"}
                                     >Rent Property</Button>
-                                   
+                                  
                                     
                                 </Card.Body>
                             </Card>
                         </Col>
-                        {/* <GoogleMapReact
-                            bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY}}
-                            defaultCenter={location}
-                            defaultZoom={17}
-                        ></GoogleMapReact> */}
+                        
                     </Row>
+                    <Maps/>
                 </Col>
                     </Row>
 
