@@ -16,10 +16,10 @@ export default function (state = {}, action) {
         ...state,
         user: action.payload.data
     };
-    case "LOG_OUT":
+    case "TOTAL_PROPERTIES":
         return {
             ...state,
-            user: action.payload.data
+            Total: action.payload
         };
     
     case "TOTAL_PROPERTY":
