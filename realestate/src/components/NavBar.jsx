@@ -12,13 +12,13 @@ import axios from 'axios'
  const NavBar = (props) => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
-  const [show2, setShow2] = useState(false);
+ 
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
   const BASE_URL = process.env.REACT_APP_URL
-  const handleShow2 = () =>  setShow2(true)
+ 
   const handleClose = () => setShow(false);
-  const handleClose2 = () => setShow2(false);
+  
   const handleShow = () => setShow(true);
   
   const [email, setEmail] = useState('')
@@ -69,13 +69,13 @@ import axios from 'axios'
                 <NavDropdown.Item href="#action/3.3">Home 03</NavDropdown.Item>
                 
               </NavDropdown>
-              <NavDropdown title="Property" id="basic-nav-dropdown" className='mr-4'>
-                <NavDropdown.Item as={Link} to="/properties">Property</NavDropdown.Item>
+              <NavDropdown title="Properties" id="basic-nav-dropdown" className='mr-4'>
+                <NavDropdown.Item as={Link} to="/properties">Properties</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/">Property available</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/">Property by city</NavDropdown.Item>
               
               </NavDropdown>
-              <NavDropdown title="Pages" id="basic-nav-dropdown" className='mr-4'>
+              <NavDropdown title="About" id="basic-nav-dropdown" className='mr-4'>
                 <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
                 <NavDropdown.Item href="">Advisor</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Search List</NavDropdown.Item>
