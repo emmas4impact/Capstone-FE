@@ -8,7 +8,7 @@ class FormSearch extends Component {
     render() {
         return(
             <Container className='mt-5'>
-                <Row style={{padding: '30px 20px 10px', background: 'rgb(200, 35, 50, 0.8)', borderRadius: '5px'}}>
+                <Row style={{padding: '30px 20px 10px', background: 'green', borderRadius: '5px'}}>
                     
             <Form.Group  style={{textAlign:'center', display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center', flexWrap: 'wrap'}}>
             <Col lg={3} md={12} sm={12} className='mb-2'>
