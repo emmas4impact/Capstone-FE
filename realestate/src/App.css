@@ -76,7 +76,7 @@ object-fit: cover;
   border: none;
 }
 .imgStyle { transition: all .5s ease-in-out; }
-.imgStyle:hover {
+.cardStyle:hover .imgStyle{
   transform: scale(1.1);
   overflow: hidden;
 }
@@ -84,7 +84,6 @@ object-fit: cover;
   height: calc(100% - 10px);
 } */
 .footerCard {
-  
   opacity: 0.0;
   -webkit-transition: all 500ms ease-in-out;
   -moz-transition: all 500ms ease-in-out;
