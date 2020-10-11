@@ -42,7 +42,7 @@ class Home extends Component {
         const response = await fetch("http://localhost:3456/students")
         const data = await response.json()
         
-        console.log(data)
+       // console.log(data)
         this.setState({
             students: data.Students,
             Total: data.Total,
@@ -60,8 +60,8 @@ class Home extends Component {
         const limit= this.state.limit
         const total = this.state.totalProject
         const skip = total - limit
-        console.log("skip", skip)
-        console.log("total", total)
+        //console.log("skip", skip)
+        //console.log("total", total)
         const res = await fetch(`http://localhost:3456/projects?limit=${limit}&offset=${skip}`)
         
         const lastPro =await res.json()
@@ -72,7 +72,7 @@ class Home extends Component {
     }
     
     render(){
-        console.log(this.props)
+        //console.log(this.props)
         return(
             <>
             
