@@ -22,7 +22,7 @@ const getListingWithThunk = (users) => {
             },
             withCredentials: true,
           })
-        //const data= await fetch(`${BASE_URL}/users/me`)
+        
         users  = await res
        
         // console.log("A thunk was used to dispatch this action", getState());
