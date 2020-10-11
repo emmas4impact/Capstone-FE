@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import {Link, withRouter} from 'react-router-dom'
+import {connect} from "react-redux"
 
 import axios from 'axios'
  const NavBar = (props) => {
@@ -91,11 +92,15 @@ import axios from 'axios'
                 
               </NavDropdown>
               <Nav.Link style={{color: '#000'}} href="#contact" className='mr-4'>Contact us</Nav.Link>
-              <Nav.Link style={{color: '#000'}} href="#contact" className='lineAfter' onClick={handleShow}>
+              
+              {!props.data.user &&<>
+                <Nav.Link style={{color: '#000'}} href="#contact" className='lineAfter' onClick={handleShow}>
               <FontAwesomeIcon icon={faUser} className='mr-2'/>
                 Sign in</Nav.Link>
           
               <Nav.Link style={{color: '#000'}} href="#contact" onClick={handleShow1}>Sign up</Nav.Link>
+               </>}
+            
         
         
               
@@ -209,4 +214,6 @@ import axios from 'axios'
 </>
 )
 }
-export default withRouter(NavBar)
+ 
+ const mapStateToProps = s => s
+export default withRouter(connect(mapStateToProps)(NavBar))
