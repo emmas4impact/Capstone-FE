@@ -70,7 +70,7 @@ class PropertyDetails extends Component {
                                     <Card.Text ><strong>Details: </strong>{this.props.data.property.details}</Card.Text>
                                     <Card.Text ><strong>Region: </strong>{this.props.data.property.region}</Card.Text>
                                     <Button variant="primary"
-                                        as={Link} to={"/tenant/"}
+                                        as={Link} to={`/${this.props.match.params.id}/tenant`}
                                     >Rent Property</Button>
                                   
                                     
