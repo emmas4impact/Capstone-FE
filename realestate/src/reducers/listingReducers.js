@@ -11,16 +11,22 @@ export default function (state = {}, action) {
             ...state,
             property: action.payload
         };
-      case "GET_USER":
+    case "GET_USER":
+    return {
+        ...state,
+        user: action.payload.data
+    };
+    case "LOG_OUT":
         return {
             ...state,
             user: action.payload.data
         };
-        case "TOTAL_PROPERTY":
-        return {
-            ...state,
-            numOfStudent: action.payload,
-        };
+    
+    case "TOTAL_PROPERTY":
+    return {
+        ...state,
+        Total: action.payload,
+    };
     case "SORTING_KEYS":
         return {
             ...state,
