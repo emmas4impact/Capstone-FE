@@ -16,7 +16,7 @@ const initialState = {
         properties: [],
         property: [],
         tenants: [],
-        users:[],
+        user:{},
         Total: 0,
         limit: 5,
         Perpage:8,
