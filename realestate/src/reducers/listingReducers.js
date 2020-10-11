@@ -1,6 +1,6 @@
 export default function (state = {}, action) {
+    console.log('id for property', action);
     switch (action.type) {
-    
       case "GET_PROPERTY":
             return {
                 ...state,
@@ -14,7 +14,7 @@ export default function (state = {}, action) {
       case "GET_USER":
         return {
             ...state,
-            user: action.payload
+            user: action.payload.data
         };
         case "TOTAL_PROPERTY":
         return {
