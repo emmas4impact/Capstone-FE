@@ -111,7 +111,6 @@ class Listing extends Component {
                     <Form.Control as="textarea" rows={3} placeholder='text here...' />
                 </Form.Group>
                 <Form.Group>
-                    <Form.File id="exampleFormControlFile1" label="Upload Images"  style={{fontWeight: '700'}}/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicEmail">

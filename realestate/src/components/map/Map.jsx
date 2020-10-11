@@ -29,7 +29,7 @@ class Maps extends Component{
                     style="mapbox://styles/mapbox/streets-v11"
                     containerStyle={{
                         height: '100vh',
-                        width: '100vw'
+                  
                 }}
                 >
                     <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
