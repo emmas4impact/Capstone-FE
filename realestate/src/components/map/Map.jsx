@@ -8,8 +8,8 @@ const mapStateToProps = (state) => state;
 class Maps extends Component{
     
         state = {
-            lng: -74.5,
-            lat: 40,
+            lng: 9.0820,
+            lat: 8.6753,
             zoom: 2
         };
 
@@ -26,6 +26,7 @@ class Maps extends Component{
         return(
             <>
                 <Map
+                    // eslint-disable-next-line react/style-prop-object
                     style="mapbox://styles/mapbox/streets-v11"
                     containerStyle={{
                         height: '100vh',
@@ -33,9 +34,9 @@ class Maps extends Component{
                 }}
                 >
                     <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-                        <Feature coordinates={[6.5244, 3.3792]} />
+                        <Feature coordinates={[9.0820, 8.6753]} />
                     </Layer>
-                </Map>;
+                </Map>
                
                
             </>)
