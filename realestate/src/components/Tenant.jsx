@@ -25,9 +25,9 @@ class Tenant extends Component {
         this.setState({tenant: tenant})
      }
      
-     bookProperty = async(e,id) =>{
+     bookProperty = async(e) =>{
         e.preventDefault()
-        const resp = await fetch(`${BASE_URL}/listings/${id}/tenant`,{
+        const resp = await fetch(`${BASE_URL}/listings/${this.props.match.params.id}/tenants`,{
             method: "POST",
             body: JSON.stringify(this.state.tenant),
             headers: {
@@ -42,7 +42,7 @@ class Tenant extends Component {
                 tenant:{ 
                     name: "",
                     surname:"",
-                    employer:"",
+                    Employer:"",
                     phone:"",
                     email:""
                 }
@@ -71,28 +71,56 @@ class Tenant extends Component {
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label style={{fontSize: '15px', marginBottom: '30px', fontWeight: '500'}}>Fill in the form and we will get back to you</Form.Label>
                         </Form.Group>
-                        <Form.Group controlId="formBasicEmail">
+                        <Form.Group >
                           <Form.Label style={{fontSize: '12px'}}>Name</Form.Label>
-                          <Form.Control className='borderNone' type="text" placeholder="Name" style={{fontSize: '12px'}}/>
+                          <Form.Control className='borderNone' 
+                          id="name" 
+                          type="text"
+                           placeholder="Name" 
+                           style={{fontSize: '12px'}}
+                           value={this.state.tenant.name}
+                           onChange={this.handleChange}/>
                         </Form.Group>
                         <Form.Group >
                           <Form.Label>Surname</Form.Label>
-                          <Form.Control className='borderNone' type="text" placeholder="Surname"  style={{fontSize: '12px'}}/>
+                          <Form.Control className='borderNone'
+                           id="surname"
+                            type="text" 
+                            placeholder="Surname"  
+                            style={{fontSize: '12px'}}
+                            value={this.state.tenant.surname}
+                            onChange={this.handleChange}/>
                         </Form.Group>
-                        <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control className='borderNone' type="email" placeholder="Email address" style={{fontSize: '12px'}}/>
+                        <Form.Group >
+                        <Form.Label>Employer</Form.Label>
+                        <Form.Control className='borderNone'
+                         id="Employer" 
+                         type="text" 
+                         placeholder="Employer's details" 
+                         style={{fontSize: '12px'}}
+                         value={this.state.tenant.Employer}
+                         onChange={this.handleChange}/>
                       </Form.Group>
-                      <Form.Group controlId="formBasicEmail">
-                          <Form.Label>Phone Nember</Form.Label>
-                          <Form.Control className='borderNone' type="tel" placeholder="Number" style={{fontSize: '12px'}}/>
+                      <Form.Group >
+                          <Form.Label>Phone Number</Form.Label>
+                          <Form.Control className='borderNone' 
+                          id="phone"
+                           type="tel" 
+                           placeholder="Number" 
+                           style={{fontSize: '12px'}}
+                           value={this.state.tenant.phone}
+                           onChange={this.handleChange}/>
                         </Form.Group>
-                      <Form.Group controlId="formBasicEmail">
-                          <Form.Label>Property ID</Form.Label>
-                          <Form.Control className='borderNone' type="text" placeholder="Property ID" style={{fontSize: '12px'}}/>
+                      <Form.Group >
+                          <Form.Label>Email</Form.Label>
+                          <Form.Control className='borderNone' 
+                          id="email" type="email" placeholder="Email Address" 
+                          style={{fontSize: '12px'}}
+                          value={this.state.tenant.email}
+                          onChange={this.handleChange}/>
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '10px'}}>
+                        <Button variant="primary" type="submit" style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '10px'}} onClick={this.bookProperty}>
                             Submit Now
                         </Button>
 
