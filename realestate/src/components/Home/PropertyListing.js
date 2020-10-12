@@ -24,7 +24,9 @@ getTotalListingThunk: (totalProperties) => dispatch(getTotalListingWithThunk(tot
 const getListingWithThunk = (listings) => {
     
     return async(dispatch, getState) => {
-        const skip=(getState().data.currentPageNum * getState().data.numPerPage)-getState().data.numPerpage
+        const initSkip=getState().data.currentPageNum * getState().data.numPerPage
+        const skip =initSkip - getState().data.numPerPage
+        console.log(skip)
         const data= await fetch(`${BASE_URL}/listings?limit=${getState().data.numPerPage}&offset=${skip}`)
         listings  = await data.json()
         console.log("A thunk was used to dispatch this action", getState());
@@ -59,12 +61,17 @@ class PropertyListing extends Component {
     }
     changePage = (value, c) => {
         if (value > 1) {
+            
             this.props.data.currentPageNum = value
+            console.log( this.props.data.currentPageNum )
         } else {
             this.props.data.currentPageNum = 1
         }
-        this.props.getTotalListingThunk(c)
+        this.props.getListingThunk(c)
     }
+    // componentDidUpdate =(id)=>{
+    //     this.props.getListingThunk(id)
+    // }
     render(){
         const pageNums =  []
         for(let i =1; i <= Math.ceil(this.props.data.Total/this.props.data.numPerPage); i++){
@@ -94,7 +101,7 @@ class PropertyListing extends Component {
                              {property.descriptions}
                             </Card.Text> */}
                             <Card.Text style={{fontSize: '13px', fontWeight: '600', borderBottom: '1px solid #E8E8E8', paddingBottom: '20px'}}>
-                             $ {property.price}
+                            ₦ {property.price}
                             </Card.Text>
                             <Card.Text>
                              {property.region}
