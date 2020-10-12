@@ -86,7 +86,7 @@ class PropertyDetails extends Component {
                                     {/* <Card.Title><strong style={{  fontSize: '15px'}}>Property: </strong>{this.props.data.property.title}</Card.Title> */}
                                     {/* <Card.Subtitle><strong>Type:</strong><Badge variant="danger"> {this.props.data.property.category}</Badge></Card.Subtitle> */}
                                     <Card.Text><strong  style={{  fontSize: '15px'}}>Description:</strong> {this.props.data.property.description}</Card.Text>
-                                    <Card.Text><strong  style={{   fontSize: '15px'}}>Price: </strong>${this.props.data.property.price}</Card.Text>
+                                    <Card.Text><strong  style={{   fontSize: '15px'}}>Price: </strong>₦{this.props.data.property.price}</Card.Text>
                                     <Card.Text><strong  style={{   fontSize: '15px'}}>District: </strong>{this.props.data.property.district}</Card.Text>
                                   
                                   
@@ -94,7 +94,7 @@ class PropertyDetails extends Component {
                                     <Card.Text ><strong style={{   fontSize: '15px'}}>Details: </strong>{this.props.data.property.details}</Card.Text>
                                     <Card.Text ><strong style={{   fontSize: '15px'}}>Region: </strong>{this.props.data.property.region}</Card.Text>
                                     <Button style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '10px'}}
-                                        as={Link} to={"/tenant/"}
+                                        as={Link} to={`/${this.props.match.params.id}/tenant`}
                                     >Rent Property</Button>
                                   
                                     
