@@ -36,7 +36,7 @@ class Maps extends Component{
                 }}
                 >
                     <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-                        <Feature coordinates={[9.0820, 8.6753]} />
+                        <Feature coordinates={[this.state.lat, this.state.lng]} />
                     </Layer>
                 </Map>
                
