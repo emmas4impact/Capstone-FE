@@ -1,6 +1,0 @@
-const GET_PROPERTY = "GET_PROPERTY"
-const POST_PROPERTY = "POST_PROPERTY"
-
-
-
-
