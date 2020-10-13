@@ -20,7 +20,7 @@ const initialState = {
         Total: 0,
         limit: 5,
         show: false,
-        numPerPage: 4,
+        numPerPage: 6,
         currentPageNum: 1,
         sortingKeys: [],
         selectedKey: '...',
