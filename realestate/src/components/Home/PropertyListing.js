@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import {  Card,  Container, Row, Col,ToggleButtonGroup, ToggleButton,Alert} from 'react-bootstrap'
 import { connect } from "react-redux";
 import { Link, withRouter} from 'react-router-dom';
-import Maps from '../map/Map'
-import { faPhone, faEnvelope, faBed, faShower, faSquareRootAlt, faBorderStyle, faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
+import ReactMapGL,{Marker, Popup} from 'react-map-gl';
+import {GoLocation} from 'react-icons/go'
+import {GiHouse} from 'react-icons/gi'
+import { faPhone, faEnvelope, faBed, faShower,  faBorderStyle, faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { addressIcon } from '../img/home-address.png'
 //import StarRatingComponent from 'react-star-rating-component';
@@ -53,10 +55,32 @@ const getListingWithThunk = (listings) => {
   };
 
 class PropertyListing extends Component {
+    state = {
+        viewport: {
+          width: "80%",
+          height: "100vh",
+          latitude: 6.5236,
+          longitude: 3.6006,
+          zoom: 8
+        },
+        selectedProp: null
+      };
     
     componentDidMount = async (id) =>{
         this.props.getListingThunk(id)
         this.props.getTotalListingThunk(id)
+        
+        const listener = e => {
+            if (e.key === "Escape") {
+              this.setState({selectedProp: null})
+            }
+          };
+        
+          window.addEventListener("keydown", listener);
+
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
         
     }
     changePage = (value, c) => {
@@ -69,9 +93,7 @@ class PropertyListing extends Component {
         }
         this.props.getListingThunk(c)
     }
-    // componentDidUpdate =(id)=>{
-    //     this.props.getListingThunk(id)
-    // }
+    
     render(){
         const pageNums =  []
         for(let i =1; i <= Math.ceil(this.props.data.Total/this.props.data.numPerPage); i++){
@@ -97,9 +119,7 @@ class PropertyListing extends Component {
                             </Card.Text>
                             <Card.Title style={{fontWeight: '600', fontSize: '18px'}}>{property.title}</Card.Title>
                         
-                            {/* <Card.Text style={{fontSize: '13px', fontWeight: '600'}}>
-                             {property.descriptions}
-                            </Card.Text> */}
+                          
                             <Card.Text style={{fontSize: '13px', fontWeight: '600', borderBottom: '1px solid #E8E8E8', paddingBottom: '20px'}}>
                             ₦ {property.price}
                             </Card.Text>
@@ -129,9 +149,53 @@ class PropertyListing extends Component {
             ))}
             
             </Row>
-            <div> <h1>Properties Location</h1></div>
-             <Maps/>    
-             <Alert variant="info" className="text-center">page <strong>{this.props.data.currentPageNum}</strong> of <strong>{pageNums.length}</strong></Alert>
+            </Container>
+         
+          <div style={{overflow: "hidden", paddingLeft: "120px"}}>
+          <div> <h1>Properties Location</h1></div>
+            <ReactMapGL
+                {...this.state.viewport}
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+                mapStyle={"mapbox://styles/emmas4impact/ckg7q71if0lw019pn97kcf2yj"}
+                onViewportChange={(viewport) => this.setState({viewport})}
+            >
+                {this.props.data.properties.map((prop, i)=>(
+                    <Marker key={i} latitude={prop.location.coordinates[1]} longitude={prop.location.coordinates[0]}>
+                        <button
+                            onClick={e=>{
+                                e.preventDefault()
+                                this.setState({selectedProp: prop})
+                                
+                                }
+                                     
+                                     }
+                        >
+                        <GoLocation style={{color: "green"}}
+                        />
+                        </button>
+                    </Marker>
+                
+                ))}
+                 {this.state.selectedProp ? (
+            <Popup
+                latitude={this.state.selectedProp.location.coordinates[1]}
+                longitude={this.state.selectedProp.location.coordinates[0]}
+                onClose={() => {
+                this.setState({selectedProp: null});
+                }}
+            >
+                <div>
+                <h2><GiHouse/> {this.state.selectedProp.title}</h2>
+                <p>{this.state.selectedProp.details}</p>
+                <p>{this.state.selectedProp.location.formattedAddress}</p>
+                </div>
+          </Popup>
+        ) : null}
+                
+            </ReactMapGL>  
+            </div>
+          <Container>
+            
              <ToggleButtonGroup type="radio" name="options" defaultValue={1} className="py-3">
                         {pageNums.map((number) => {
                             
@@ -155,8 +219,9 @@ class PropertyListing extends Component {
                             
                         })
                         }
+                       
                     </ToggleButtonGroup>           
-           
+                    <Alert variant="info" className="text-center">page <strong>{this.props.data.currentPageNum}</strong> of <strong>{pageNums.length}</strong></Alert>   
                         
                       
 
