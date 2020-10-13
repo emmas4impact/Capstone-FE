@@ -49,7 +49,8 @@ class PropertyDetails extends Component {
           longitude: 3.6006,
           zoom: 8
         },
-        selectedProp: null
+        selectedProp: null,
+        
       };
     
     componentDidMount = async () =>{
@@ -75,6 +76,7 @@ class PropertyDetails extends Component {
             <>
             <div style={{background: '#F6F7FB', paddingTop: '50px', paddingBottom: '50px'}}>
             <Container style={{border: '1px solid #DEDEE0'}}>
+          
             <Row>
                 <Col>
                 <h4 className='mt-4 mb-5'>Property Details</h4>
