@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button, Container } from 'react-bootstrap'
+import { Form, Button, Container, Toast,Row,Col } from 'react-bootstrap'
 import {withRouter} from 'react-router-dom'
 
 const BASE_URL = process.env.REACT_APP_URL
@@ -13,6 +13,7 @@ class Tenant extends Component {
             email:""
         },
         errMess: "",
+        show: false
     }
     handleChange=(input) =>{
         let tenant =this.state.tenant;
@@ -26,7 +27,7 @@ class Tenant extends Component {
      }
      
      bookProperty = async(e) =>{
-        e.preventDefault()
+        //e.preventDefault()
         const resp = await fetch(`${BASE_URL}/listings/${this.props.match.params.id}/tenants`,{
             method: "POST",
             body: JSON.stringify(this.state.tenant),
@@ -66,6 +67,15 @@ class Tenant extends Component {
         console.log(this.props)
         return (
             <div>
+                  <Row>
+                    <Col md={6}>
+                        <Toast onClose={() => this.setState({show:false})} show={this.state.show} delay={3000} autohide>
+                        
+                        <Toast.Body>An email has been sent to {this.state.tenant.email}</Toast.Body>
+                        </Toast>
+                    </Col>
+                   
+                </Row>
                 <Container>   
                     <Form style={{fontSize: '12px', border: '1px solid #DEDEE0', padding: '20px'}}>
                         <Form.Group controlId="formBasicEmail">
@@ -120,7 +130,10 @@ class Tenant extends Component {
                           onChange={this.handleChange}/>
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '10px'}} onClick={this.bookProperty}>
+                        <Button variant="primary" type="submit" style={{ background: '#C82332', border: 'none', padding: '5px 25px', marginTop: '10px'}} 
+                        onClick={(e)=> {this.setState({show:true});
+                                        e.preventDefault();
+                                 this.bookProperty()}}>
                             Submit Now
                         </Button>
 
