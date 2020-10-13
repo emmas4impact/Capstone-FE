@@ -3,7 +3,9 @@ import {  Card,  Container, Row, Col,Image, Badge, Button}from 'react-bootstrap'
 import { connect } from "react-redux";
 import StarRatingComponent from 'react-star-rating-component';
 import {Link, withRouter} from 'react-router-dom'
-import Maps from  './map/Map'
+import ReactMapGL,{Marker, Popup} from 'react-map-gl';
+import {GoLocation} from 'react-icons/go'
+import {GiHouse} from 'react-icons/gi'
 import Tenant from './Tenant';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ScrollToTop from 'react-scroll-up'
@@ -38,14 +40,37 @@ const getListingWithThunk = (id) => {
 
 
 class PropertyDetails extends Component {
+    
+    state = {
+        viewport: {
+          width: "80%",
+          height: "100vh",
+          latitude: 6.5236,
+          longitude: 3.6006,
+          zoom: 8
+        },
+        selectedProp: null
+      };
+    
     componentDidMount = async () =>{
         this.props.getListingThunk(this.props.match.params.id)
+        const listener = e => {
+            if (e.key === "Escape") {
+              this.setState({selectedProp: null})
+            }
+          };
+        
+          window.addEventListener("keydown", listener);
+
+        return () => {
+        window.removeEventListener("keydown", listener);
+        };
        
     }
     
   
     render(){
-        
+        const data = this.props.data.property
         return(
             <>
             <div style={{background: '#F6F7FB', paddingTop: '50px', paddingBottom: '50px'}}>
@@ -70,10 +95,7 @@ class PropertyDetails extends Component {
                             </div>        
                             <h3 className='ml-3 pb-3'>{this.props.data.property.title}</h3>
 
-                          {/* <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center', padding: '30px'}}>
-                            <p style={{color: '#C82332', fontSize: '30px', fontWeight: '800', marginRight: '50px'}}>${this.props.data.property.price}</p>
-                            <p style={{color: '#000', fontSize: '40px', fontWeight: '600'}}>{this.props.data.property.title}</p>
-                          </div> */}
+                       
                         </Col>
                         <Col md={12} lg={5} sm={12}>
                             <Tenant />
@@ -83,8 +105,7 @@ class PropertyDetails extends Component {
                         <Col md={12} lg={12} sm={12}>
                            <Card style={{border: 'none'}}>
                            <Card.Body>
-                                    {/* <Card.Title><strong style={{  fontSize: '15px'}}>Property: </strong>{this.props.data.property.title}</Card.Title> */}
-                                    {/* <Card.Subtitle><strong>Type:</strong><Badge variant="danger"> {this.props.data.property.category}</Badge></Card.Subtitle> */}
+                                   
                                     <Card.Text><strong  style={{  fontSize: '15px'}}>Description:</strong> {this.props.data.property.description}</Card.Text>
                                     <Card.Text><strong  style={{   fontSize: '15px'}}>Price: </strong>₦{this.props.data.property.price}</Card.Text>
                                     <Card.Text><strong  style={{   fontSize: '15px'}}>District: </strong>{this.props.data.property.district}</Card.Text>
@@ -103,7 +124,49 @@ class PropertyDetails extends Component {
                         </Col>
                       </Row>  
                  
-                    <Maps/>
+                      <div style={{overflow: "hidden", paddingLeft: "120px"}}>
+          <div> <h1>Properties Location</h1></div>
+            <ReactMapGL
+                {...this.state.viewport}
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+                mapStyle={"mapbox://styles/emmas4impact/ckg7q71if0lw019pn97kcf2yj"}
+                onViewportChange={(viewport) => this.setState({viewport})}
+            >
+                
+                    {/* <Marker latitude={data.location.coordinates[1]} longitude={data.location.coordinates[0]}>
+                        <button
+                            onClick={e=>{
+                                e.preventDefault()
+                                this.setState({selectedProp: data})
+                                
+                                }
+                                     
+                                     }
+                        >
+                        <GoLocation style={{color: "green"}}
+                        />
+                        </button>
+                    </Marker>
+                
+               
+                 {this.state.selectedProp ? (
+                    <Popup
+                        latitude={this.state.selectedProp.location.coordinates[1]}
+                        longitude={this.state.selectedProp.location.coordinates[0]}
+                        onClose={() => {
+                        this.setState({selectedProp: null});
+                        }}
+                    >
+                        <div>
+                        <h2><GiHouse/> {this.state.selectedProp.title}</h2>
+                        <p>{this.state.selectedProp.details}</p>
+                        <p>{this.state.selectedProp.location.formattedAddress}</p>
+                        </div>
+                </Popup>
+                ) : null} */}
+                {console.log(data.location)}
+            </ReactMapGL>  
+            </div>
                 </Col>
                     </Row>
 
