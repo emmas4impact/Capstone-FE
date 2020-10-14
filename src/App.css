@@ -27,7 +27,7 @@ body {
   text-align: center;
  
 }
-.slick-slide img {
+.test{
  margin: 0 auto 30px;
  border: 10px solid rgba(255, 255, 255, 0.1);
  height: 114px;
@@ -48,6 +48,17 @@ object-fit: cover;
 .lineAfter::after {
   content: '/';
   margin-left: 10px;   
+}
+ .prop{
+   display: flex !important;
+  border: 10px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto 100px !important;
+  border: none !important;
+  width:400px !important;
+  height:400px!important;
+  justify-items: center;
+  border-radius: none !important;
+ 
 }
 
 .borderNone {

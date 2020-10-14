@@ -1,8 +1,8 @@
 import React from 'react'
 import {Container} from 'react-bootstrap'
-import pic1 from '../img/pic-1.jpg'
-import pic2 from '../img/pic-2.jpg'
-import pic3 from '../img/pic-3.jpg'
+import pic1 from '../img/mic.jpeg'
+import pic2 from '../img/dad.jpeg'
+import pic3 from '../img/ema.jpeg'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -21,7 +21,7 @@ class Testimony extends React.Component {
         autoplay: true
       };
       return (
-          <div style={{background: '#262E3B', padding: '100px', cololr: '#fff'}}>
+          <div style={{background: '#262E3B', padding: '100px', color: '#fff'}}>
 
         <Container style={{textAlign: 'center', color: '#fff'}}>
         <h3 style={{letterSpacing: '5px'}}>Testimonials</h3>
@@ -29,22 +29,22 @@ class Testimony extends React.Component {
                 
         <Slider {...settings}>
           <div>
-            <img src={pic1} alt="pic1"/>
-            <h6>Agusta Silva</h6>
+            <img className="test" src={pic1} alt="pic1"/>
+            <h6>Michael Adedeji</h6>
             <small>Sales Manager</small>
-            <p className='pt-3'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <p className='pt-3'>Successfuly Market Many homes</p>
           </div>
           <div>
-            <img src={pic2} alt="pic1"/>
-            <h6>Leila Mortin</h6>
+            <img className="test" src={pic2} alt="pic1"/>
+            <h6>John Fawole</h6>
             <small>CEO</small>
-            <p className='pt-3'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <p className='pt-3'>Founder Of Bridge Homes</p>
           </div>
           <div>
-            <img src={pic3} alt="pic1"/>
-            <h6>Diana Alutska</h6>
+            <img className="test" src={pic3} alt="pic1"/>
+            <h6>Emmanuel Adedeji</h6>
             <small>Product Manager</small>
-            <p className='pt-3'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <p className='pt-3'>10 years experience in real Estate business</p>
           </div>
           
          

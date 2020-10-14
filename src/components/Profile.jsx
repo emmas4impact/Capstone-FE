@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import axios from 'axios'
-import {Jumbotron, Button} from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
+import {GoLocation} from 'react-icons/go'
+import {GiHouse} from 'react-icons/gi'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 const BASE_URL = process.env.REACT_APP_URL
 
 const mapStateToProps = (state) => state;
@@ -9,26 +14,26 @@ const mapStateToProps = (state) => state;
 const mapDispatchToProps = (dispatch) => ({
 
 
-getListingThunk: (users) => dispatch(getListingWithThunk(users)),
+getListingThunk: (properties) => dispatch(getListingWithThunk(properties)),
 
 });
-const getListingWithThunk = (users) => {
+const getListingWithThunk = (properties) => {
    
     
     return async(dispatch, getState) => {
-        const res = await axios.get(`${BASE_URL}/users/me`, {
+        const res = await axios.get(`${BASE_URL}/listings`, {
             headers: {
               "Content-Type": "application/json",
             },
-            withCredentials: true,
+           
           })
         
-        users  = await res
+        properties  = await res
        
         // console.log("A thunk was used to dispatch this action", getState());
         dispatch({
-            type: "GET_USER",
-            payload: users,
+            type: "GET_PROPERTY",
+            payload: properties.data.data,
         });
         // console.log("Property By ID", users)
     
@@ -44,18 +49,42 @@ class Profile extends Component{
     
    
     render(){
+        var settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: true
+          };
         return(
             <>
-                <Jumbotron>
-                    <h1>Welcome!</h1>
-                    <p>
-                        This is a simple hero unit, a simple jumbotron-style component for calling
-                        extra attention to featured content or information.
-                    </p>
-                    <p>
-                        <Button variant="primary">Learn more</Button>
-                    </p>
-                </Jumbotron>
+         <h3 style={{letterSpacing: '5px', color: "black"}}>Available Properties</h3>     
+        <Container style={{textAlign: 'center', color: '#fff'}}>
+       
+         
+        <Slider {...settings}>
+        {this.props.data.properties.map((prop, i)=>{
+          return(
+            <div >
+            <div >
+            <img className="prop" src={prop.image} alt="pic1"/>
+            </div>
+            <div style={{ paddingBottom: "150px"}}>
+            <h6 style={{letterSpacing: '5px', color: "black"}}><GiHouse size={24} style={{margin: "10px"}}/>{prop.title}</h6>
+            <small style={{letterSpacing: '5px', color: "black" }}><GoLocation size={24} style={{margin: "10px"}}/>{prop.district}</small>
+            </div>
+          </div>
+          )
+        })}
+          
+         
+         
+         
+        </Slider>
+        </Container>
+      
             </>
         )
     }

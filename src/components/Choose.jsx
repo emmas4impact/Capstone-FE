@@ -3,6 +3,7 @@ import { Row, Col, Container } from 'react-bootstrap'
 import icon1 from '../img/customer.png'
 import icon2 from '../img/property.png'
 import icon3 from '../img/finance.png'
+import Profile from './Profile'
 
 
 const Choose = () => {
@@ -29,6 +30,7 @@ const Choose = () => {
                     <p>Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
                 </Col>
             </Row>
+            <Profile/>
         </Container>
         </div>
     )
