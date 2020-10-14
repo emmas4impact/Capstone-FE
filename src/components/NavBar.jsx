@@ -65,40 +65,39 @@ import axios from 'axios'
             <Nav className="ml-auto">
             <NavDropdown title="Home" id="basic-nav-dropdown" className='mr-4'>
                 <NavDropdown.Item as={Link} to="/">Home</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Home 02</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Home 03</NavDropdown.Item>
+               
                 
               </NavDropdown>
               <NavDropdown title="Properties" id="basic-nav-dropdown" className='mr-4'>
                 <NavDropdown.Item as={Link} to="/properties">Properties</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/">Property available</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/">Property by city</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/properties">Property available</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/properties">Property by city</NavDropdown.Item>
               
               </NavDropdown>
               <NavDropdown title="About" id="basic-nav-dropdown" className='mr-4'>
-                <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
-                <NavDropdown.Item href="">Advisor</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Search List</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.1">Search Grid</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">FAQ</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Pricing</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">User list</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Registration</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">About</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="">Advisor</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">Search List</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">Search Grid</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">FAQ</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">Pricing</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">User list</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">Registration</NavDropdown.Item>
                 
               </NavDropdown>
               <NavDropdown title="News" id="basic-nav-dropdown" className='mr-4'>
-                <NavDropdown.Item href="#action/3.1">News</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">News details</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">News</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">News details</NavDropdown.Item>
                 
               </NavDropdown>
-              <Nav.Link style={{color: '#000'}} href="#contact" className='mr-4'>Contact us</Nav.Link>
+              <Nav.Link style={{color: '#000'}} as={Link} to="/" className='mr-4'>Contact us</Nav.Link>
               
               {!props.data.user &&<>
-                <Nav.Link style={{color: '#000'}} href="#contact" className='lineAfter' onClick={handleShow}>
+                <Nav.Link style={{color: '#000'}} as={Link} to="/" className='lineAfter' onClick={handleShow}>
               <FontAwesomeIcon icon={faUser} className='mr-2'/>
                 Sign in</Nav.Link>
           
-              <Nav.Link style={{color: '#000'}} href="#contact" onClick={handleShow1}>Sign up</Nav.Link>
+              <Nav.Link style={{color: '#000'}} as={Link} to="/" onClick={handleShow1}>Sign up</Nav.Link>
                </>}
             
         
