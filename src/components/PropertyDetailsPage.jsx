@@ -50,11 +50,14 @@ class PropertyDetails extends Component {
           zoom: 8
         },
         selectedProp: null,
-        
+        property: {}
       };
     
     componentDidMount = async () =>{
-        this.props.getListingThunk(this.props.match.params.id)
+       await this.props.getListingThunk(this.props.match.params.id)
+        const response = await fetch(`${process.env.REACT_APP_URL}/listings/${this.props.match.params.id}`)
+        const property= await response.json()
+        this.setState({property})
         const listener = e => {
             if (e.key === "Escape") {
               this.setState({selectedProp: null})
@@ -71,7 +74,7 @@ class PropertyDetails extends Component {
     
   
     render(){
-        const data = this.props.data.property
+        console.log("from local state",this.state.property)
         return(
             <>
             <div style={{background: '#F6F7FB', paddingTop: '50px', paddingBottom: '50px'}}>
@@ -126,7 +129,7 @@ class PropertyDetails extends Component {
                         </Col>
                       </Row>  
                  
-                      <div style={{overflow: "hidden", paddingLeft: "120px"}}>
+                      <div style={{overflow: "hidden", paddingLeft: "10vw"}}>
           <div> <h1>Properties Location</h1></div>
             <ReactMapGL
                 {...this.state.viewport}
@@ -135,11 +138,14 @@ class PropertyDetails extends Component {
                 onViewportChange={(viewport) => this.setState({viewport})}
             >
                 
-                    {/* <Marker latitude={data.location.coordinates[1]} longitude={data.location.coordinates[0]}>
+                    {console.log(this.props.data.property.location)}
+                    {/* <Marker latitude={this.state.property.location.coordinates[1]} longitude={this.state.property.location.coordinates[0]}>
+                    <GoLocation style={{color: "green"}}
+                        />
                         <button
                             onClick={e=>{
                                 e.preventDefault()
-                                this.setState({selectedProp: data})
+                                this.setState({selectedProp: this.state.property})
                                 
                                 }
                                      
@@ -166,7 +172,9 @@ class PropertyDetails extends Component {
                         </div>
                 </Popup>
                 ) : null} */}
-                {console.log(data.location)}
+               
+              
+             
             </ReactMapGL>  
             </div>
                 </Col>

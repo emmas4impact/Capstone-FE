@@ -63,7 +63,8 @@ class PropertyListing extends Component {
           longitude: 3.6006,
           zoom: 8
         },
-        selectedProp: null
+        selectedProp: null,
+        
       };
     
     componentDidMount = async (id) =>{

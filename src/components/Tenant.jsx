@@ -37,7 +37,7 @@ class Tenant extends Component {
         })
         
         if(resp.ok){
-            alert("Property booked!");
+            // alert("Property booked!");
             
             this.setState({
                 tenant:{ 
@@ -67,15 +67,19 @@ class Tenant extends Component {
         console.log(this.props)
         return (
             <div>
-                  <Row>
-                    <Col md={6}>
-                        <Toast onClose={() => this.setState({show:false})} show={this.state.show} delay={3000} autohide>
+                        <Toast onClose={() => this.setState({show:false})} show={this.state.show} delay={3000} autohide 
+                        style={{
+                        position: 'absolute',
+                        top: 0,
+                        right: 0,
+                        }}
+                        >
                         
-                        <Toast.Body>An email has been sent to {this.state.tenant.email}</Toast.Body>
+                        <Toast.Body>An email has been sent!</Toast.Body>
                         </Toast>
-                    </Col>
+                 
                    
-                </Row>
+              
                 <Container>   
                     <Form style={{fontSize: '12px', border: '1px solid #DEDEE0', padding: '20px'}}>
                         <Form.Group controlId="formBasicEmail">

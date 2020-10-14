@@ -100,6 +100,13 @@ object-fit: cover;
   opacity: 1.0;
   background-color: #fff;
 }
+.toast-body{
+  color: blue;
+  background-color: lightblue;
+  height: 70px;
+
+
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
