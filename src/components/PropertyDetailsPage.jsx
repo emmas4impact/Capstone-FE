@@ -10,6 +10,7 @@ import Tenant from './Tenant';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ScrollToTop from 'react-scroll-up'
 import {  faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
+import {get} from 'lodash'
 
 const BASE_URL = process.env.REACT_APP_URL
 
@@ -43,7 +44,7 @@ class PropertyDetails extends Component {
     
     state = {
         viewport: {
-          width: "80%",
+          width: "100%",
           height: "100vh",
           latitude: 6.5236,
           longitude: 3.6006,
@@ -53,22 +54,22 @@ class PropertyDetails extends Component {
         property: {}
       };
     
-    componentDidMount = async () =>{
+    componentDidMount = async () => {
        await this.props.getListingThunk(this.props.match.params.id)
         const response = await fetch(`${process.env.REACT_APP_URL}/listings/${this.props.match.params.id}`)
         const property= await response.json()
-        this.setState({property})
+        this.setState({ property })
         const listener = e => {
             if (e.key === "Escape") {
               this.setState({selectedProp: null})
             }
           };
         
-          window.addEventListener("keydown", listener);
+        window.addEventListener("keydown", listener);
 
-        return () => {
-        window.removeEventListener("keydown", listener);
-        };
+        // return () => {
+        // window.removeEventListener("keydown", listener);
+        // };
        
     }
     
@@ -139,9 +140,8 @@ class PropertyDetails extends Component {
             >
                 
                     {console.log(this.props.data.property.location)}
-                    {/* <Marker latitude={this.state.property.location.coordinates[1]} longitude={this.state.property.location.coordinates[0]}>
-                    <GoLocation style={{color: "green"}}
-                        />
+                    <Marker latitude={get(this, 'state.property.location.coordinates[1]', 3.4)} longitude={get(this, 'state.property.location.coordinates[0]', 3.5)}>
+                  
                         <button
                             onClick={e=>{
                                 e.preventDefault()
@@ -167,11 +167,12 @@ class PropertyDetails extends Component {
                     >
                         <div>
                         <h2><GiHouse/> {this.state.selectedProp.title}</h2>
+                        <img src={this.state.selectedProp.image} style={{width: "80px"}} alt={this.state.selectedProp.title}/>
                         <p>{this.state.selectedProp.details}</p>
                         <p>{this.state.selectedProp.location.formattedAddress}</p>
                         </div>
                 </Popup>
-                ) : null} */}
+                ) : null}
                
               
              

@@ -187,6 +187,7 @@ class PropertyListing extends Component {
             >
                 <div>
                 <h2><GiHouse/> {this.state.selectedProp.title}</h2>
+                <img src={this.state.selectedProp.image} style={{width: "80px"}} alt={this.state.selectedProp.title}/>
                 <p>{this.state.selectedProp.details}</p>
                 <p>{this.state.selectedProp.location.formattedAddress}</p>
                 </div>

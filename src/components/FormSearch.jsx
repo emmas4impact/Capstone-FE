@@ -16,12 +16,12 @@ class FormSearch extends Component {
                 
             </Form.Control>
             </Col>
-            <Col lg={3} md={12} sm={12} className='mb-2'>
+            <Col lg={2} md={12} sm={12} className='mb-2'>
             <Form.Control as="select" size="sm">
                 <option>All properties</option>
             </Form.Control>
             </Col>
-            <Col lg={3} md={12} sm={12} className='mb-2'>
+            <Col lg={2} md={12} sm={12} className='mb-2'>
             <Form.Control as="select" size="sm">
                 <option>Room</option>
             </Form.Control>
@@ -29,6 +29,21 @@ class FormSearch extends Component {
             <Col lg={2} md={12} sm={12} className='mb-2'>
             <Form.Control size="sm" as="select">
                 <option>Any Price</option>
+                <option>100000</option>
+                <option>150000</option>
+                <option>200000</option>
+                <option>250000</option>
+                <option>300000</option>
+            </Form.Control>
+            </Col>
+            <Col lg={2} md={12} sm={12} className='mb-2'>
+            <Form.Control size="sm" as="select">
+                <option>Any Price</option>
+                <option>150000</option>
+                <option>250000</option>
+                <option>300000</option>
+                <option>350000</option>
+                <option>400000</option>
             </Form.Control>
             </Col>
             <Col lg={1} md={12} sm={12} className='mb-2'>

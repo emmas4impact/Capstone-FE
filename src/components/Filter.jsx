@@ -14,9 +14,9 @@ import {withRouter} from 'react-router-dom'
 
             {this.props.location.pathname==="/properties" &&<>
               <Container className='welcome'>
-              <h6 style={{ 'letterSpacing': '5px'}}>The Best Way To</h6>
-              <h2 style={{ 'letterSpacing': '5px', marginTop: '10px'}}>Find Your Dream Home</h2>
-              <h5 style={{ 'letterSpacing': '3px', marginTop: '5px'}}>From as low as 1500 Naira per day with limited time offer discounts.</h5>
+              <h6 style={{ 'letterSpacing': '5px', color: "purple"}}>Bridge Homes The Place</h6>
+              <h2 style={{ 'letterSpacing': '5px', marginTop: '10px',color: "purple"}}>To Find Your Dream Home</h2>
+              <h5 style={{ 'letterSpacing': '3px', marginTop: '5px', color: "purple"}}>From as low as 1500 Naira per day with limited time offer discounts.</h5>
             <div style={{display: 'flex', marginTop: '30px'}}> 
               <Button variant='danger' className='mr-2'>
                   Buy
