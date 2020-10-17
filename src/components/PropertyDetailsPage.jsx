@@ -5,7 +5,6 @@ import StarRatingComponent from 'react-star-rating-component';
 import {Link, withRouter} from 'react-router-dom'
 import ReactMapGL,{Marker, Popup} from 'react-map-gl';
 import {GoLocation} from 'react-icons/go'
-import {GiHouse} from 'react-icons/gi'
 import Tenant from './Tenant';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ScrollToTop from 'react-scroll-up'
@@ -174,10 +173,7 @@ class PropertyDetails extends Component {
                                     src={prop}
                                     alt={this.state.selectedProp.title}
                                 />
-                                <Carousel.Caption>
-                                    <h3>{this.state.selectedProp.title}</h3>
-                                
-                                </Carousel.Caption>
+                               
                                 </Carousel.Item>
                                 
                             ))}
@@ -192,7 +188,14 @@ class PropertyDetails extends Component {
                         <Card.Text>
                         {this.state.selectedProp.details}
                         </Card.Text>
-                        
+                        <Card.Text>
+                            <StarRatingComponent 
+                                            
+                            name="rating"
+                            starCount={5}
+                            value={this.state.selectedProp.rating}
+                            />
+                        </Card.Text>
                         </Card.Body>
                     </Card>
                     

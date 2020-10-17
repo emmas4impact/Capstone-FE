@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link, withRouter} from 'react-router-dom';
 import ReactMapGL,{Marker, Popup} from 'react-map-gl';
 import {GoLocation} from 'react-icons/go'
-
+import StarRatingComponent from 'react-star-rating-component';
 import { faPhone, faEnvelope, faBed, faShower,  faBorderStyle, faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -196,10 +196,7 @@ class PropertyListing extends Component {
                             src={prop}
                             alt={this.state.selectedProp.title}
                         />
-                        <Carousel.Caption>
-                            <h3>{this.state.selectedProp.title}</h3>
-                           
-                        </Carousel.Caption>
+                      
                         </Carousel.Item>
                         
                     ))}
@@ -212,7 +209,12 @@ class PropertyListing extends Component {
                 {this.state.selectedProp.description}
                 </Card.Text>
                 <Card.Text>
-                {this.state.selectedProp.details}
+                    <StarRatingComponent 
+                                    
+                    name="rating"
+                    starCount={5}
+                    value={this.state.selectedProp.rating}
+                    />
                 </Card.Text>
                 
                 </Card.Body>
