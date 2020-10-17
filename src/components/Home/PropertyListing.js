@@ -178,7 +178,7 @@ class PropertyListing extends Component {
                 
                 ))}
                  {this.state.selectedProp ? (
-            <Popup
+            <Popup 
                 latitude={this.state.selectedProp.location.coordinates[1]}
                 longitude={this.state.selectedProp.location.coordinates[0]}
                 onClose={() => {
@@ -187,7 +187,7 @@ class PropertyListing extends Component {
                 
           
             >
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }} className='cardStyle'>
                 <Carousel>
                     {this.state.selectedProp.images.map((prop, i)=>(
                         <Carousel.Item key={i}>

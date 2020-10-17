@@ -29,26 +29,36 @@ class FormSearch extends Component {
             <Col lg={2} md={12} sm={12} className='mb-2'>
             <Form.Control size="sm" as="select">
                 <option>Any Price</option>
-                <option>100000</option>
-                <option>150000</option>
                 <option>200000</option>
-                <option>250000</option>
-                <option>300000</option>
+                <option>400000</option>
+                <option>200000</option>
+                <option>600000</option>
+                <option>1200000</option>
+                <option>1400000</option>
+                <option>1600000</option>
+                <option>1800000</option>
+                <option>2000000</option>
+                <option>2500000</option>
             </Form.Control>
             </Col>
             <Col lg={2} md={12} sm={12} className='mb-2'>
             <Form.Control size="sm" as="select">
                 <option>Any Price</option>
-                <option>150000</option>
-                <option>250000</option>
-                <option>300000</option>
-                <option>350000</option>
                 <option>400000</option>
+                <option>600000</option>
+                <option>1000000</option>
+                <option>1200000</option>
+                <option>1400000</option>
+                <option>1600000</option>
+                <option>1800000</option>
+                <option>2000000</option>
+                <option>2500000</option>
+                <option>4000000</option>
             </Form.Control>
             </Col>
             <Col lg={1} md={12} sm={12} className='mb-2'>
-            <Button style={{background:'transparent', border: 'none', color:"organge"}}>
-            <FontAwesomeIcon icon={faSearch} size={12}/> 
+            <Button style={{background:'transparent', border: 'none', color:"orange"}}>
+            <FontAwesomeIcon icon={faSearch} size={22}/> 
               </Button>
               </Col>
             </Form.Group>
