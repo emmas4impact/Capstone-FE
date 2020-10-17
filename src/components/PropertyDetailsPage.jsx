@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {  Card,  Container, Row, Col,Image, Badge, Button}from 'react-bootstrap'
+import {  Card,  Container, Row, Col,Image, Badge, Button,Carousel}from 'react-bootstrap'
 import { connect } from "react-redux";
 import StarRatingComponent from 'react-star-rating-component';
 import {Link, withRouter} from 'react-router-dom'
@@ -165,12 +165,43 @@ class PropertyDetails extends Component {
                         this.setState({selectedProp: null});
                         }}
                     >
-                        <div>
+                     <Card style={{ width: '18rem' }}>
+                        <Carousel>
+                            {this.state.selectedProp.images.map((prop, i)=>(
+                                <Carousel.Item key={i}>
+                                <img
+                                    className="d-block w-100"
+                                    src={prop}
+                                    alt={this.state.selectedProp.title}
+                                />
+                                <Carousel.Caption>
+                                    <h3>{this.state.selectedProp.title}</h3>
+                                
+                                </Carousel.Caption>
+                                </Carousel.Item>
+                                
+                            ))}
+                            
+                                
+                            </Carousel>
+                        <Card.Body>
+                        <Card.Title>{this.state.selectedProp.title}</Card.Title>
+                        <Card.Text>
+                        {this.state.selectedProp.description}
+                        </Card.Text>
+                        <Card.Text>
+                        {this.state.selectedProp.details}
+                        </Card.Text>
+                        
+                        </Card.Body>
+                    </Card>
+                    
+                        {/* <div>
                         <h2><GiHouse/> {this.state.selectedProp.title}</h2>
                         <img src={this.state.selectedProp.image} style={{width: "80px"}} alt={this.state.selectedProp.title}/>
                         <p>{this.state.selectedProp.details}</p>
                         <p>{this.state.selectedProp.location.formattedAddress}</p>
-                        </div>
+                        </div> */}
                 </Popup>
                 ) : null}
                

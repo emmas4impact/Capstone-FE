@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import {  Card,  Container, Row, Col,ToggleButtonGroup, ToggleButton,Alert} from 'react-bootstrap'
+import {  Card,  Container, Row, Col,ToggleButtonGroup, ToggleButton,Alert,Carousel} from 'react-bootstrap'
 import { connect } from "react-redux";
 import { Link, withRouter} from 'react-router-dom';
 import ReactMapGL,{Marker, Popup} from 'react-map-gl';
 import {GoLocation} from 'react-icons/go'
-import {GiHouse} from 'react-icons/gi'
+
 import { faPhone, faEnvelope, faBed, faShower,  faBorderStyle, faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { addressIcon } from '../img/home-address.png'
-//import StarRatingComponent from 'react-star-rating-component';
+
+
 import ScrollToTop from 'react-scroll-up'
 
 
@@ -115,7 +115,7 @@ class PropertyListing extends Component {
                         <Card.Body>
                         <Card.Text className='pt-3' style={{fontSize: '10px'}}>
                             {/* <img src={addressIcon}/> */}
-                             <p ><img style={{width: '20px', marginRight: '6px'}} src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ0M3B0IiB2aWV3Qm94PSItNjEgMCA0NDMgNDQzLjI4OCIgd2lkdGg9IjQ0M3B0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im05Ni4xNDQ1MzEgMTM2djg4aDMydi01NmMwLTQuNDE3OTY5IDMuNTgyMDMxLTggOC04aDQ4YzQuNDE3OTY5IDAgOCAzLjU4MjAzMSA4IDh2NTZoMzJ2LTg4YzAtNC40MTc5NjkgMy41ODIwMzEtOCA4LThoOC40ODA0NjlsLTgwLjQ4MDQ2OS02MS45MDIzNDQtODAuNDgwNDY5IDYxLjkwMjM0NGg4LjQ4MDQ2OWM0LjQxNzk2OSAwIDggMy41ODIwMzEgOCA4em0wIDAiLz48cGF0aCBkPSJtMTQ0LjE0NDUzMSAxNzZoMzJ2NDhoLTMyem0wIDAiLz48cGF0aCBkPSJtMTYwLjE0NDUzMSA0NDMuMjg5MDYyYzMwLjEwMTU2My0zNy41ODU5MzcgMTYwLTIwNC4zMjgxMjQgMTYwLTI4My4yODkwNjIgMC04OC4zNjcxODgtNzEuNjM2NzE5LTE2MC0xNjAtMTYwLTg4LjM2NzE4NyAwLTE2MCA3MS42MzI4MTItMTYwIDE2MCAwIDc4Ljk3NjU2MiAxMjkuODk0NTMxIDI0NS43MTA5MzggMTYwIDI4My4yODkwNjJ6bS0xMDguODc4OTA2LTMxMy42MDE1NjIgMTA0LTgwYzIuODc1LTIuMjE0ODQ0IDYuODgyODEzLTIuMjE0ODQ0IDkuNzU3ODEzIDBsMTA0IDgwYzIuNjkxNDA2IDIuMDk3NjU2IDMuNzU3ODEyIDUuNjY3OTY5IDIuNjU2MjUgOC44OTQ1MzEtMS4wOTc2NTcgMy4yMjY1NjMtNC4xMjUgNS40MDIzNDQtNy41MzUxNTcgNS40MTc5NjloLTI0djg4YzAgNC40MTc5NjktMy41ODIwMzEgOC04IDhoLTE0NGMtNC40MTc5NjkgMC04LTMuNTgyMDMxLTgtOHYtODhoLTI0Yy0zLjQyMTg3NSAwLTYuNDY0ODQzLTIuMTc5Njg4LTcuNTcwMzEyLTUuNDIxODc1LTEuMTAxNTYzLTMuMjQyMTg3LS4wMTk1MzEtNi44MjQyMTkgMi42OTE0MDYtOC45MTQwNjN6bTAgMCIvPjwvc3ZnPg==" />{property.location.formattedAddress}</p>
+                             <p ><img style={{width: '20px', marginRight: '6px'}} src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ0M3B0IiB2aWV3Qm94PSItNjEgMCA0NDMgNDQzLjI4OCIgd2lkdGg9IjQ0M3B0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im05Ni4xNDQ1MzEgMTM2djg4aDMydi01NmMwLTQuNDE3OTY5IDMuNTgyMDMxLTggOC04aDQ4YzQuNDE3OTY5IDAgOCAzLjU4MjAzMSA4IDh2NTZoMzJ2LTg4YzAtNC40MTc5NjkgMy41ODIwMzEtOCA4LThoOC40ODA0NjlsLTgwLjQ4MDQ2OS02MS45MDIzNDQtODAuNDgwNDY5IDYxLjkwMjM0NGg4LjQ4MDQ2OWM0LjQxNzk2OSAwIDggMy41ODIwMzEgOCA4em0wIDAiLz48cGF0aCBkPSJtMTQ0LjE0NDUzMSAxNzZoMzJ2NDhoLTMyem0wIDAiLz48cGF0aCBkPSJtMTYwLjE0NDUzMSA0NDMuMjg5MDYyYzMwLjEwMTU2My0zNy41ODU5MzcgMTYwLTIwNC4zMjgxMjQgMTYwLTI4My4yODkwNjIgMC04OC4zNjcxODgtNzEuNjM2NzE5LTE2MC0xNjAtMTYwLTg4LjM2NzE4NyAwLTE2MCA3MS42MzI4MTItMTYwIDE2MCAwIDc4Ljk3NjU2MiAxMjkuODk0NTMxIDI0NS43MTA5MzggMTYwIDI4My4yODkwNjJ6bS0xMDguODc4OTA2LTMxMy42MDE1NjIgMTA0LTgwYzIuODc1LTIuMjE0ODQ0IDYuODgyODEzLTIuMjE0ODQ0IDkuNzU3ODEzIDBsMTA0IDgwYzIuNjkxNDA2IDIuMDk3NjU2IDMuNzU3ODEyIDUuNjY3OTY5IDIuNjU2MjUgOC44OTQ1MzEtMS4wOTc2NTcgMy4yMjY1NjMtNC4xMjUgNS40MDIzNDQtNy41MzUxNTcgNS40MTc5NjloLTI0djg4YzAgNC40MTc5NjktMy41ODIwMzEgOC04IDhoLTE0NGMtNC40MTc5NjkgMC04LTMuNTgyMDMxLTgtOHYtODhoLTI0Yy0zLjQyMTg3NSAwLTYuNDY0ODQzLTIuMTc5Njg4LTcuNTcwMzEyLTUuNDIxODc1LTEuMTAxNTYzLTMuMjQyMTg3LS4wMTk1MzEtNi44MjQyMTkgMi42OTE0MDYtOC45MTQwNjN6bTAgMCIvPjwvc3ZnPg==" alt={property.title}/>{property.location.formattedAddress}</p>
                              <p >{property.region}</p>
                             </Card.Text>
                             <Card.Title style={{fontWeight: '600', fontSize: '18px'}}>{property.title}</Card.Title>
@@ -153,7 +153,7 @@ class PropertyListing extends Component {
             </Container>
          
           <div style={{overflow: "hidden", paddingLeft: "120px"}}>
-          <div> <h1>Properties Location</h1></div>
+          <div> <h1>Location</h1></div>
             <ReactMapGL
                 {...this.state.viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -184,13 +184,41 @@ class PropertyListing extends Component {
                 onClose={() => {
                 this.setState({selectedProp: null});
                 }}
+                
+          
             >
-                <div>
-                <h2><GiHouse/> {this.state.selectedProp.title}</h2>
-                <img src={this.state.selectedProp.image} style={{width: "80px"}} alt={this.state.selectedProp.title}/>
-                <p>{this.state.selectedProp.details}</p>
-                <p>{this.state.selectedProp.location.formattedAddress}</p>
-                </div>
+            <Card style={{ width: '18rem' }}>
+                <Carousel>
+                    {this.state.selectedProp.images.map((prop, i)=>(
+                        <Carousel.Item key={i}>
+                        <img
+                            className="d-block w-100"
+                            src={prop}
+                            alt={this.state.selectedProp.title}
+                        />
+                        <Carousel.Caption>
+                            <h3>{this.state.selectedProp.title}</h3>
+                           
+                        </Carousel.Caption>
+                        </Carousel.Item>
+                        
+                    ))}
+                    
+                        
+                    </Carousel>
+                <Card.Body>
+                <Card.Title>{this.state.selectedProp.title}</Card.Title>
+                <Card.Text>
+                {this.state.selectedProp.description}
+                </Card.Text>
+                <Card.Text>
+                {this.state.selectedProp.details}
+                </Card.Text>
+                
+                </Card.Body>
+            </Card>
+            
+           
           </Popup>
         ) : null}
                 
@@ -200,6 +228,7 @@ class PropertyListing extends Component {
             
              <ToggleButtonGroup type="radio" name="options" defaultValue={1} className="py-3">
                         {pageNums.map((number) => {
+                            
                             
                             if (((number === 1) || (number === pageNums.length)) || ((number > this.props.data.currentPageNum - 3) && (number < this.props.data.currentPageNum + 3))) {
                                 return (

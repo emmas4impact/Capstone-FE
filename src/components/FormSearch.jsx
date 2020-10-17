@@ -47,8 +47,8 @@ class FormSearch extends Component {
             </Form.Control>
             </Col>
             <Col lg={1} md={12} sm={12} className='mb-2'>
-            <Button style={{background:'transparent', border: 'none'}}>
-            <FontAwesomeIcon icon={faSearch} /> 
+            <Button style={{background:'transparent', border: 'none', color:"organge"}}>
+            <FontAwesomeIcon icon={faSearch} size={12}/> 
               </Button>
               </Col>
             </Form.Group>
