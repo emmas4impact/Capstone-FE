@@ -138,10 +138,10 @@ class PropertyDetails extends Component {
                 onViewportChange={(viewport) => this.setState({viewport})}
             >
                 
-                    {console.log(this.props.data.property.location)}
-                    <Marker latitude={get(this, 'state.property.location.coordinates[1]', 3.4)} longitude={get(this, 'state.property.location.coordinates[0]', 3.5)}>
-                  
-                        <button
+                    
+                    {this.props.data.property && this.props.data.property.location && <Marker latitude={this.props.data.property.location.coordinates[1]} longitude={this.props.data.property.location.coordinates[0]}>
+                    
+                    <button
                             onClick={e=>{
                                 e.preventDefault()
                                 this.setState({selectedProp: this.state.property})
@@ -155,6 +155,10 @@ class PropertyDetails extends Component {
                         </button>
                     </Marker>
                 
+                     }
+                    {/* <Marker latitude={get(this, 'state.property.location.coordinates[1]', 3.4)} longitude={get(this, 'state.property.location.coordinates[0]', 3.5)}> */}
+                  
+                       
                
                  {this.state.selectedProp ? (
                     <Popup
