@@ -57,7 +57,7 @@ const getListingWithThunk = (listings) => {
 class PropertyListing extends Component {
     state = {
         viewport: {
-          width: "80%",
+          width: "100%",
           height: "100vh",
           latitude: 6.5236,
           longitude: 3.6006,
@@ -152,9 +152,13 @@ class PropertyListing extends Component {
             </Row>
             </Container>
          
-          <div style={{overflow: "hidden", paddingLeft: "120px"}}>
-          <div> <h1>Location</h1></div>
-            <ReactMapGL
+          <div style={{overflow: "hidden"}}>
+         
+          <Container >
+         <Row><Col> <h1>Location</h1></Col></Row>
+          <Row>
+          <Col style={{display: 'flex', justifyContent: 'center'}}>
+            <ReactMapGL style={{margin: '0 auto', width: '100% !important'}}
                 {...this.state.viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                 mapStyle={"mapbox://styles/emmas4impact/ckg7q71if0lw019pn97kcf2yj"}
@@ -224,7 +228,10 @@ class PropertyListing extends Component {
           </Popup>
         ) : null}
                 
-            </ReactMapGL>  
+            </ReactMapGL> 
+            </Col> 
+            </Row>
+            </Container>
             </div>
           <Container>
             
