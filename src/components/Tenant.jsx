@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button, Container, Toast,Row,Col } from 'react-bootstrap'
+import { Form, Button, Container, Toast } from 'react-bootstrap'
 import {withRouter} from 'react-router-dom'
 
 const BASE_URL = process.env.REACT_APP_URL
