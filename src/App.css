@@ -8,7 +8,7 @@ body {
 }
 .back {
   background: url('https://i.ytimg.com/vi/HbsdLI8kaWc/maxresdefault.jpg');
-  height: 100vh;
+  height: 50vh;
   background-size: cover;
   background-position: center;
   object-fit: cover;
@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
+  /*margin-top: 150px; */
   text-align: center;
  
 }
