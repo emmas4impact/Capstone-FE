@@ -61,7 +61,18 @@ class PropertyListing extends Component {
           height: "100vh",
           latitude: 6.5236,
           longitude: 3.6006,
-          zoom: 8
+          zoom: 8,
+         
+        },
+        settings:{
+            doubleClickZoom: false,
+            dragPan: false,
+            dragRotate: false,
+            scrollZoom: false,
+            touchZoom: false,
+            touchRotate: false,
+            keyboard: false,  
+            
         },
         selectedProp: null,
         
@@ -160,6 +171,7 @@ class PropertyListing extends Component {
           <Col style={{display: 'flex', justifyContent: 'center'}}>
             <ReactMapGL style={{margin: '0 auto', width: '100% !important'}}
                 {...this.state.viewport}
+                {...this.state.settings}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                 mapStyle={"mapbox://styles/emmas4impact/ckg7q71if0lw019pn97kcf2yj"}
                 onViewportChange={(viewport) => this.setState({viewport})}

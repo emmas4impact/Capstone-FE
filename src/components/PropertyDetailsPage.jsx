@@ -9,7 +9,7 @@ import Tenant from './Tenant';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ScrollToTop from 'react-scroll-up'
 import {  faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
-import {get} from 'lodash'
+//import {get} from 'lodash'
 
 const BASE_URL = process.env.REACT_APP_URL
 
@@ -48,6 +48,16 @@ class PropertyDetails extends Component {
           latitude: 6.5236,
           longitude: 3.6006,
           zoom: 8
+        },
+        settings:{
+            doubleClickZoom: false,
+            dragPan: false,
+            dragRotate: false,
+            scrollZoom: false,
+            touchZoom: false,
+            touchRotate: false,
+            keyboard: false,  
+            
         },
         selectedProp: null,
         property: {}
@@ -130,9 +140,10 @@ class PropertyDetails extends Component {
                       </Row>  
                  
                       <div style={{overflow: "hidden", paddingLeft: "10vw"}}>
-          <div> <h1>Properties Location</h1></div>
+          <div> <h1>Location</h1></div>
             <ReactMapGL
                 {...this.state.viewport}
+                {...this.state.settings}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                 mapStyle={"mapbox://styles/emmas4impact/ckg7q71if0lw019pn97kcf2yj"}
                 onViewportChange={(viewport) => this.setState({viewport})}
