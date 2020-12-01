@@ -28,10 +28,10 @@ const getListingWithThunk = (listings) => {
     return async(dispatch, getState) => {
         const initSkip=getState().data.currentPageNum * getState().data.numPerPage
         const skip =initSkip - getState().data.numPerPage
-        console.log(skip)
+        //console.log(skip)
         const data= await fetch(`${BASE_URL}/listings?limit=${getState().data.numPerPage}&offset=${skip}`)
         listings  = await data.json()
-        console.log("A thunk was used to dispatch this action", getState());
+        //console.log("A thunk was used to dispatch this action", getState());
         dispatch({
             type: "GET_PROPERTY",
             payload: listings.data,
@@ -45,7 +45,7 @@ const getListingWithThunk = (listings) => {
     return async(dispatch, getState) => {
         const data= await fetch(`${BASE_URL}/listings`)
         totalProperties  = await data.json()
-        console.log("A thunk was used to dispatch this action", getState());
+        //console.log("A thunk was used to dispatch this action", getState());
         dispatch({
             type: "TOTAL_PROPERTIES",
             payload: totalProperties.Total,
@@ -99,7 +99,7 @@ class PropertyListing extends Component {
         if (value > 1) {
             
             this.props.data.currentPageNum = value
-            console.log( this.props.data.currentPageNum )
+            //console.log( this.props.data.currentPageNum )
         } else {
             this.props.data.currentPageNum = 1
         }
@@ -126,8 +126,8 @@ class PropertyListing extends Component {
                         <Card.Body>
                         <Card.Text className='pt-3' style={{fontSize: '10px'}}>
                             {/* <img src={addressIcon}/> */}
-                             <p ><img style={{width: '20px', marginRight: '6px'}} src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ0M3B0IiB2aWV3Qm94PSItNjEgMCA0NDMgNDQzLjI4OCIgd2lkdGg9IjQ0M3B0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im05Ni4xNDQ1MzEgMTM2djg4aDMydi01NmMwLTQuNDE3OTY5IDMuNTgyMDMxLTggOC04aDQ4YzQuNDE3OTY5IDAgOCAzLjU4MjAzMSA4IDh2NTZoMzJ2LTg4YzAtNC40MTc5NjkgMy41ODIwMzEtOCA4LThoOC40ODA0NjlsLTgwLjQ4MDQ2OS02MS45MDIzNDQtODAuNDgwNDY5IDYxLjkwMjM0NGg4LjQ4MDQ2OWM0LjQxNzk2OSAwIDggMy41ODIwMzEgOCA4em0wIDAiLz48cGF0aCBkPSJtMTQ0LjE0NDUzMSAxNzZoMzJ2NDhoLTMyem0wIDAiLz48cGF0aCBkPSJtMTYwLjE0NDUzMSA0NDMuMjg5MDYyYzMwLjEwMTU2My0zNy41ODU5MzcgMTYwLTIwNC4zMjgxMjQgMTYwLTI4My4yODkwNjIgMC04OC4zNjcxODgtNzEuNjM2NzE5LTE2MC0xNjAtMTYwLTg4LjM2NzE4NyAwLTE2MCA3MS42MzI4MTItMTYwIDE2MCAwIDc4Ljk3NjU2MiAxMjkuODk0NTMxIDI0NS43MTA5MzggMTYwIDI4My4yODkwNjJ6bS0xMDguODc4OTA2LTMxMy42MDE1NjIgMTA0LTgwYzIuODc1LTIuMjE0ODQ0IDYuODgyODEzLTIuMjE0ODQ0IDkuNzU3ODEzIDBsMTA0IDgwYzIuNjkxNDA2IDIuMDk3NjU2IDMuNzU3ODEyIDUuNjY3OTY5IDIuNjU2MjUgOC44OTQ1MzEtMS4wOTc2NTcgMy4yMjY1NjMtNC4xMjUgNS40MDIzNDQtNy41MzUxNTcgNS40MTc5NjloLTI0djg4YzAgNC40MTc5NjktMy41ODIwMzEgOC04IDhoLTE0NGMtNC40MTc5NjkgMC04LTMuNTgyMDMxLTgtOHYtODhoLTI0Yy0zLjQyMTg3NSAwLTYuNDY0ODQzLTIuMTc5Njg4LTcuNTcwMzEyLTUuNDIxODc1LTEuMTAxNTYzLTMuMjQyMTg3LS4wMTk1MzEtNi44MjQyMTkgMi42OTE0MDYtOC45MTQwNjN6bTAgMCIvPjwvc3ZnPg==" alt={property.title}/>{property.location.formattedAddress}</p>
-                             <p >{property.region}</p>
+                             <Card.Text ><img style={{width: '20px', marginRight: '6px'}} src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ0M3B0IiB2aWV3Qm94PSItNjEgMCA0NDMgNDQzLjI4OCIgd2lkdGg9IjQ0M3B0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im05Ni4xNDQ1MzEgMTM2djg4aDMydi01NmMwLTQuNDE3OTY5IDMuNTgyMDMxLTggOC04aDQ4YzQuNDE3OTY5IDAgOCAzLjU4MjAzMSA4IDh2NTZoMzJ2LTg4YzAtNC40MTc5NjkgMy41ODIwMzEtOCA4LThoOC40ODA0NjlsLTgwLjQ4MDQ2OS02MS45MDIzNDQtODAuNDgwNDY5IDYxLjkwMjM0NGg4LjQ4MDQ2OWM0LjQxNzk2OSAwIDggMy41ODIwMzEgOCA4em0wIDAiLz48cGF0aCBkPSJtMTQ0LjE0NDUzMSAxNzZoMzJ2NDhoLTMyem0wIDAiLz48cGF0aCBkPSJtMTYwLjE0NDUzMSA0NDMuMjg5MDYyYzMwLjEwMTU2My0zNy41ODU5MzcgMTYwLTIwNC4zMjgxMjQgMTYwLTI4My4yODkwNjIgMC04OC4zNjcxODgtNzEuNjM2NzE5LTE2MC0xNjAtMTYwLTg4LjM2NzE4NyAwLTE2MCA3MS42MzI4MTItMTYwIDE2MCAwIDc4Ljk3NjU2MiAxMjkuODk0NTMxIDI0NS43MTA5MzggMTYwIDI4My4yODkwNjJ6bS0xMDguODc4OTA2LTMxMy42MDE1NjIgMTA0LTgwYzIuODc1LTIuMjE0ODQ0IDYuODgyODEzLTIuMjE0ODQ0IDkuNzU3ODEzIDBsMTA0IDgwYzIuNjkxNDA2IDIuMDk3NjU2IDMuNzU3ODEyIDUuNjY3OTY5IDIuNjU2MjUgOC44OTQ1MzEtMS4wOTc2NTcgMy4yMjY1NjMtNC4xMjUgNS40MDIzNDQtNy41MzUxNTcgNS40MTc5NjloLTI0djg4YzAgNC40MTc5NjktMy41ODIwMzEgOC04IDhoLTE0NGMtNC40MTc5NjkgMC04LTMuNTgyMDMxLTgtOHYtODhoLTI0Yy0zLjQyMTg3NSAwLTYuNDY0ODQzLTIuMTc5Njg4LTcuNTcwMzEyLTUuNDIxODc1LTEuMTAxNTYzLTMuMjQyMTg3LS4wMTk1MzEtNi44MjQyMTkgMi42OTE0MDYtOC45MTQwNjN6bTAgMCIvPjwvc3ZnPg==" alt={property.title}/>{property.location.formattedAddress}</Card.Text>
+                             <Card.Text >{property.region}</Card.Text>
                             </Card.Text>
                             <Card.Title style={{fontWeight: '600', fontSize: '18px'}}>{property.title}</Card.Title>
                         

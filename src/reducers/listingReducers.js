@@ -1,5 +1,5 @@
 export default function (state = {}, action) {
-    console.log('id for property', action);
+    
     switch (action.type) {
       case "GET_PROPERTY":
             return {
