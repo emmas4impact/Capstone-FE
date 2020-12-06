@@ -28,10 +28,10 @@ const getListingWithThunk = (listings) => {
     return async(dispatch, getState) => {
         const initSkip=getState().data.currentPageNum * getState().data.numPerPage
         const skip =initSkip - getState().data.numPerPage
-        //console.log(skip)
+        
         const data= await fetch(`${BASE_URL}/listings?limit=${getState().data.numPerPage}&offset=${skip}`)
         listings  = await data.json()
-        //console.log("A thunk was used to dispatch this action", getState());
+        
         dispatch({
             type: "GET_PROPERTY",
             payload: listings.data,
@@ -45,7 +45,7 @@ const getListingWithThunk = (listings) => {
     return async(dispatch, getState) => {
         const data= await fetch(`${BASE_URL}/listings`)
         totalProperties  = await data.json()
-        //console.log("A thunk was used to dispatch this action", getState());
+       
         dispatch({
             type: "TOTAL_PROPERTIES",
             payload: totalProperties.Total,
@@ -99,7 +99,7 @@ class PropertyListing extends Component {
         if (value > 1) {
             
             this.props.data.currentPageNum = value
-            //console.log( this.props.data.currentPageNum )
+          
         } else {
             this.props.data.currentPageNum = 1
         }
