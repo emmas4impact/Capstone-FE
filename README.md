@@ -1,68 +1,155 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  <h3 align="center">Real-Estate-(Frontend)</h3>
 
-### `npm test`
+  <p align="center">
+    REAL ESTATE PROJECT
+    <br />
+    <a href="https://github.com/emmas4impact/Capstone-FE"><strong>Explore the repo »</strong></a>
+    <br />
+    <br />
+    <a href="https://realestate-front.herokuapp.com/properties">View Demo</a>
+    ·
+    <a href="https://github.com/emmas4impact/Capstone-FE/issues">Report Bug</a>
+  </p>
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Demo](#demo)
+* [Contact](#contact)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![Product Name Screen Shot][product-screenshot]](https://srms-fe.herokuapp.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project is targeted at deploying a web application that is programmed in order to take care of exam/result and administrative records.
+The system will be available to the tutors with their login information, to record their students’ result online and also be accessible to students in other to check and print/download their result wherever they are using their personal computers, tablets or smart phones. 
+The system will also be available to a super-user tagged “ADMIN”, who will be in control of registering new student, tutor and also adding new course to the database.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [Create React App](https://github.com/facebook/create-react-app)
+* [React-Bootstrap](https://react-bootstrap.github.io/)
+* [Redux](https://redux.js.org/)
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+<!-- GETTING STARTED -->
+## Getting Started
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Prerequisites
 
-### Making a Progressive Web App
+* DEPENDENCIES
+```sh
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "google-map-react": "^2.1.7",
+    "lodash": "^4.17.20",
+    "mapbox-gl": "^1.12.0",
+    "passport": "^0.4.1",
+    "prettier": "^2.1.2",
+    "react": "^16.13.1",
+    "react-awesome-slider": "^4.1.0",
+    "react-bootstrap": "^1.3.0",
+    "react-content-loader": "^5.1.4",
+    "react-dom": "^16.13.1",
+    "react-elastic-carousel": "^0.8.1",
+    "react-icons": "^3.11.0",
+    "react-map-gl": "^5.2.9",
+    "react-mapbox-gl": "^4.8.6",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^7.2.1",
+    "react-router": "^3.2.6",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-scroll-up": "^1.3.5",
+    "react-scroll-up-button": "^1.6.4",
+    "react-slick": "^0.27.11",
+    "react-star-rating-component": "^1.4.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2",
+    "slick-carousel": "^1.8.1"
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* npm
+```sh
+npm install npm@latest -g
+```
 
-### Advanced Configuration
+### Installation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+1. Clone the repo
+```sh
+git clone https://github.com/emmas4impact/Capstone-FE.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
 
-### Deployment
+<!-- DEMO -->
+## Demo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+To see the demo, please check the following info:
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The Upon clicking on the demo link it will redirect you to the properties page on the application.
+
+1. Browse the properties you are interested 
+2. Hover the properties you are interested in and click on Review Details
+3. Fill the form and an email will be sent to your email about the properties
+
+
+
+
+
+
+
+
+<!-- CONTACT -->
+## Contact
+Emmanuel Adedeji - [@Linkedin](https://www.linkedin.com/in/emmas4impact/)
+
+Project Link: [https://github.com/emmas4impact/Capstone-FE](https://github.com/emmas4impact/Capstone-FE)
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[issues-shield]: https://img.shields.io/github/issues/segundara/srms-fe.svg?style=flat-square
+[issues-url]: https://github.com/emmas4impact/Capstone-FE/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/emmas4impact/
+[product-screenshot]: https://github.com/emmas4impact/Capstone-FE/blob/master/public/Capture.JPG
