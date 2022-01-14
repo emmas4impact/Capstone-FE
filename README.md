@@ -40,13 +40,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://srms-fe.herokuapp.com/)
+[![Product Name Screen Shot][product-screenshot]](https://realestate-front.herokuapp.com/properties)
 
-This project is targeted at deploying a web application that is programmed in order to take care of exam/result and administrative records.
-The system will be available to the tutors with their login information, to record their students’ result online and also be accessible to students in other to check and print/download their result wherever they are using their personal computers, tablets or smart phones. 
-The system will also be available to a super-user tagged “ADMIN”, who will be in control of registering new student, tutor and also adding new course to the database.
-
-
+This project is targeted at deploying a web application that is programmed in order to take care of properties rental issue. The idea is for tenant to come check their propective house and fill an application and an email will be send to house owner and tenant about the enquiry. 
 
 ### Built With
 
@@ -148,7 +144,7 @@ Project Link: [https://github.com/emmas4impact/Capstone-FE](https://github.com/e
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[issues-shield]: https://img.shields.io/github/issues/segundara/srms-fe.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/emmas4impact/Capstone-FE.svg?style=flat-square
 [issues-url]: https://github.com/emmas4impact/Capstone-FE/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/emmas4impact/
